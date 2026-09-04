@@ -1,5 +1,5 @@
  /* --------------------------------------------------
-  * © Copyright 2025 - Solaria
+  * © Copyright 2025 - AK Energies
   * --------------------------------------------------*/
 (function($) {
 	'use strict';
@@ -412,6 +412,10 @@
            margin:30,
            nav:false,
            dots:false,
+           autoplay:true,
+           autoplayTimeout:4000,
+           smartSpeed:800,
+           autoplayHoverPause:true,
            responsive:{
                1000:{
                    items:2
@@ -458,6 +462,10 @@
             items: 1,
             nav:false,
             dots:true,
+            autoplay:true,
+            autoplayTimeout:4500,
+            smartSpeed:800,
+            autoplayHoverPause:true
          });
 
          var owl = $('#item-carousel-big');
@@ -682,19 +690,6 @@
              $(this).parent().parent().find('.blog-slide').trigger('owl.prev');
          });
 
-         jQuery('.owl-custom-nav').each(function() {
-             var owl = $('.owl-custom-nav').next();
-             var ow = parseInt(owl.css("height"), 10);
-             $(this).css("margin-top", (ow / 2) - 25);
-             owl.owlCarousel();
-             // Custom Navigation Events
-             $(".btn-next").on("click", function() {
-                 owl.trigger('owl.next');
-             });
-             $(".btn-prev").on("click", function() {
-                 owl.trigger('owl.prev');
-             });
-         });
 
 
          // custom navigation for slider
@@ -1684,20 +1679,23 @@
 
             function owlnavcenter(){
              jQuery('.owl-custom-nav').each(function () {
-                 var owl = $($(this).data('target'));
-
-                 owl.owlCarousel();
+                 var target = jQuery(this).data('target');
+                 var owl = jQuery(target);
+                 var $nav = jQuery(this);
 
                  // Custom Navigation Events
-                 $(".btn-next").on("click", function () {
+                 $nav.find(".btn-next").off("click").on("click", function (e) {
+                     e.preventDefault();
                      owl.trigger('next.owl.carousel');
+                     owl.trigger('play.owl.autoplay', [4000]);
                  });
-                 $(".btn-prev").on("click", function () {
+                 $nav.find(".btn-prev").off("click").on("click", function (e) {
+                     e.preventDefault();
                      owl.trigger('prev.owl.carousel');
+                     owl.trigger('play.owl.autoplay', [4000]);
                  });
              });
             }
-            
             owlnavcenter();
          
          // marquee end

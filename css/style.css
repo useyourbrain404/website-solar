@@ -1,5 +1,5 @@
 /* ================================================== */
-/* Solaria
+/* AK Energies
 @charset "utf-8";
 
 Table of content:
@@ -58,6 +58,15 @@ Table of content:
 @import url("../fonts/icofont/icofont.min.css");
 
 * {
+  --primary-color: #67812F;
+  --primary-color-rgb: 103, 129, 47;
+  --primary-dark: #4F6823;
+  --accent-color: #FBEC6B;
+  --text-dark: #1F1F1F;
+  --text-light: #FFFFFF;
+  --border-color: rgba(255, 255, 255, 0.06);
+  --header-bg: rgb(103 129 47 / 96%);
+
   /* body font */
   --body-font: "Manrope", Helvetica, Arial, sans-serif;
   --body-font-size: 16px;
@@ -130,7 +139,7 @@ Table of content:
   --border-color: #bbbbbb;
   --container-max-width: 1240px;
   /* button */
-  --btn-color: var(--heading-font-color);
+  --btn-color: #ffffff;
   --btn-font-family: var(--body-font);
   --btn-font-size: 14px;
   --btn-font-weight: 600;
@@ -176,6 +185,11 @@ Table of content:
 /* base color */
 .id-color {
   color: var(--primary-color)
+}
+
+.id-color-2,
+.text-blue {
+  color: var(--bg-dark-1) !important;
 }
 
 .rounded-1 {
@@ -420,10 +434,6 @@ header.scroll-light .logo-scroll {
 }
 
 header.smaller.scroll-light .logo-main {
-  display: none;
-}
-
-header.smaller.scroll-light .logo-scroll {
   display: block;
 }
 
@@ -11393,7 +11403,7 @@ section.bg-grey {
   font-family: "FontAwesome";
   font-size: 18px;
   content: "\f106";
-  color: #000000;
+  color: #ffffff;
   position: relative;
 }
 
@@ -11642,7 +11652,7 @@ a.read_more i {
   display: block;
   font-family: "FontAwesome";
   content: "\f105";
-  color: #000000;
+  color: #ffffff;
   padding: 8px 0;
   font-size: 20px;
   width: 40px;
@@ -11666,7 +11676,7 @@ a.read_more i {
 
 .owl-custom-nav.dark .btn-prev:before,
 .owl-custom-nav.dark .btn-next:before {
-  color: #000000;
+  color: #ffffff;
 }
 
 .owl-custom-nav a {
@@ -12752,7 +12762,7 @@ a.btn-search-big:hover {
 }
 
 /* --------------------------------------------------
-* plugin
+* AK Energies
 * --------------------------------------------------*/
 
 /* ================================================== */
@@ -14919,11 +14929,11 @@ header.smaller,
 header.scroll-light,
 header.sticky,
 header.scrollOn {
-  background: rgba(10, 17, 40, 0.96) !important;
+  background: var(--header-bg) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   backdrop-filter: blur(12px) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid var(--border-color) !important;
   height: 85px !important;
   min-height: 85px !important;
 }
@@ -15266,4 +15276,14 @@ header.smaller #btn-extra span {
     padding: 10px 12px !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
   }
+}
+
+/* White owl dots on bg-color / dark sections */
+.bg-color .owl-single-dots .owl-dot,
+.bg-color .owl-theme .owl-dots .owl-dot {
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+.bg-color .owl-single-dots .owl-dot.active,
+.bg-color .owl-theme .owl-dots .owl-dot.active {
+  background: #ffffff !important;
 }

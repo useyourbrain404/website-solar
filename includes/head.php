@@ -4,10 +4,10 @@
  * Provides document head, meta tags, title, favicon, and stylesheet links.
  */
 if (!isset($page_title)) {
-    $page_title = "Solaria - Solar & Renewable Energy";
+    $page_title = "AK Energies - Solar & Renewable Energy";
 }
 if (!isset($page_description)) {
-    $page_description = "Solaria - Ecology & Solar Energy Solutions";
+    $page_description = "AK Energies - Solar & Clean Energy Solutions";
 }
 ?>
 <!DOCTYPE html>

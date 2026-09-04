@@ -1,5 +1,5 @@
 <?php
-$page_title = "Solar Panel Installation - Solaria Services";
+$page_title = "Solar Panel Installation - AK Energies";
 $page_description = "Professional, certified solar panel installation for homes and businesses.";
 $current_page = "service-single";
 $extra_scripts = [
@@ -52,7 +52,7 @@ require_once __DIR__ . '/includes/header.php';
                             <div class="subtitle id-color wow fadeInUp" data-wow-delay=".2s">Professional Workers</div>
                             <h2 class="wow fadeInUp" data-wow-delay=".4s">Expert Solar Installation</h2>
                             <p>
-                                At Solaria, we provide safe, efficient, and certified solar panel installation services designed to meet your unique energy needs. Our process begins with a thorough consultation and site assessment to ensure that every system we install is optimized for maximum performance and long-term savings. Whether you're looking to power a residential rooftop or a large-scale commercial facility, our team of experienced professionals is equipped with the latest technology and industry best practices to deliver a seamless installation experience.
+                                At AK Energies, we provide safe, efficient, and certified solar panel installation services designed to meet your unique energy needs. Our process begins with a thorough consultation and site assessment to ensure that every system we install is optimized for maximum performance and long-term savings. Whether you're looking to power a residential rooftop or a large-scale commercial facility, our team of experienced professionals is equipped with the latest technology and industry best practices to deliver a seamless installation experience.
                             </p>
                         </div>
                     </div>

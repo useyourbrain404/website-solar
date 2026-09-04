@@ -12,7 +12,7 @@ if (($_SERVER["REQUEST_METHOD"] ?? '') === "POST") {
         exit;
     }
 
-    $recipient = "support@solaria.com";
+    $recipient = "support@akenergies.com";
     $subject = "New Contact Form Submission from " . $name;
     $email_content = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message\n";
     $email_headers = "From: $name <$email>";
@@ -23,7 +23,7 @@ if (($_SERVER["REQUEST_METHOD"] ?? '') === "POST") {
     exit;
 }
 
-$page_title = "Contact Us - Solaria Solar Energy";
+$page_title = "Contact Us - AK Energies";
 $page_description = "Get in touch with our solar energy specialists for consultation and quotes.";
 $current_page = "contact";
 $extra_scripts = [
@@ -85,7 +85,7 @@ require_once __DIR__ . '/includes/header.php';
 
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center fw-bold text-dark"><i class="icofont-envelope me-2 id-color"></i><span>Send a Message</span></div>
-                                    support@solaria.com      
+                                    support@akenergies.com      
                                 </div>
                             </div>
 

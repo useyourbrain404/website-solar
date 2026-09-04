@@ -1,8 +1,8 @@
-# Solaria — Solar & Renewable Energy PHP Website
+# AK Energies — Solar & Renewable Energy PHP Website
 
-Solaria is a modern, responsive, high-performance PHP website designed for solar energy contractors, renewable energy providers, green tech companies, and commercial solar installations.
+AK Energies is a modern, responsive, high-performance PHP website designed for solar energy contractors, renewable energy providers, green tech companies, and commercial solar installations.
 
-Built with a clean, modular **PHP architecture**, standard **HTML5/PHP**, **Bootstrap 5**, and modern **CSS3 / Vanilla JS**, Solaria offers seamless navigation, dynamic active menus, optimized WebP imagery, interactive carousels, and an integrated contact form.
+Built with a clean, modular **PHP architecture**, standard **HTML5/PHP**, **Bootstrap 5**, and modern **CSS3 / Vanilla JS**, AK Energies offers seamless navigation, dynamic active menus, optimized WebP imagery, interactive carousels, and an integrated contact form.
 
 ---
 
@@ -111,7 +111,7 @@ At the top of each `.php` page, you can customize the metadata variables before 
 
 ```php
 <?php
-$page_title = "About Us - Solaria Solar Energy";
+$page_title = "About Us - AK Energies";
 $page_description = "Learn more about our mission and solar engineering team.";
 $current_page = "about";
 require_once __DIR__ . '/includes/head.php';
@@ -123,7 +123,7 @@ require_once __DIR__ . '/includes/header.php';
 In `contact.php`, locate the `$recipient` variable and update it with your desired inbox:
 
 ```php
-$recipient = "support@yourdomain.com";
+$recipient = "support@akenergies.com";
 ```
 
 ---
@@ -136,4 +136,4 @@ $recipient = "support@yourdomain.com";
 - **Parallax**: Jarallax
 - **Images**: High-resolution WebP solar and architectural photography
 
-© 2025 Solaria. All rights reserved.
+© 2025 AK Energies. All rights reserved.

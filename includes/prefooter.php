@@ -34,7 +34,7 @@
                                             <i class="fs-36 id-color icon_mail"></i>
                                             <div class="ms-3">
                                                 <h5 class="mb-0 fw-bold">Email Us</h5>
-                                                <p class="mb-0 fs-14 op-8">support@solaria.com</p>
+                                                <p class="mb-0 fs-14 op-8">support@akenergies.com</p>
                                             </div>
                                         </div>
                                     </div>
