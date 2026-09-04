@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 46" fill="none">
+  <!-- India Today 'it' logo -->
+  <g fill="#2b3595">
+    <rect x="12" y="16" width="10" height="24" rx="2"/>
+    <circle cx="17" cy="9" r="5"/>
+    <path d="M30 12H54V20H46V40H36V20H30V12Z"/>
+    <path d="M56 22L66 12V40H56V22Z" fill="#1e293b" opacity="0.4"/>
+  </g>
+</svg>

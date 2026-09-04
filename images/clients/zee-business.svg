@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 42" fill="none">
+  <defs>
+    <radialGradient id="zeeGold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="70%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </radialGradient>
+  </defs>
+  <circle cx="20" cy="21" r="13" fill="url(#zeeGold)"/>
+  <circle cx="20" cy="21" r="8" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+  <text x="40" y="27" font-family="Georgia, serif" font-weight="700" font-size="17" letter-spacing="0.5" fill="#b45309">ZEEBUSINESS</text>
+</svg>

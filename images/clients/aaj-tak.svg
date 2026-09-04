@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44" fill="none">
+  <defs>
+    <linearGradient id="atGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+  </defs>
+  <!-- Aaj Tak rounded badge shape with border -->
+  <rect x="3" y="3" width="94" height="38" rx="8" fill="url(#atGrad)" stroke="#f59e0b" stroke-width="2"/>
+  <text x="14" y="27" font-family="'Segoe UI', 'Noto Sans Devanagari', 'Mangal', sans-serif" font-weight="900" font-size="20" fill="#ffffff">आज</text>
+  <text x="52" y="27" font-family="'Segoe UI', 'Noto Sans Devanagari', 'Mangal', sans-serif" font-weight="900" font-size="20" fill="#ffffff">तक</text>
+</svg>

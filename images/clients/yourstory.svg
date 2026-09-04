@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" fill="none">
+  <!-- 3D wireframe box -->
+  <path d="M8 12L24 6L38 12L22 18L8 12Z" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <path d="M8 12V28L22 34V18" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <path d="M38 12V28L22 34" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <!-- Text -->
+  <text x="44" y="27" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="18" letter-spacing="0.5" fill="#dc2626">YOURSTORY</text>
+</svg>

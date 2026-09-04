@@ -125,7 +125,7 @@ require_once __DIR__ . '/includes/header.php';
                                     <!-- project image begin -->
                                     <div class="item">
                                         <div class="hover relative rounded-1 overflow-hidden text-light">
-                                            <img src="images/project-single/1.webp" class="w-100" alt="">
+                                            <img src="images/project-single/1.webp" class="w-100" style="height: 480px; object-fit: cover; object-position: center;" alt="Solar Project Installation">
                                         </div>
                                     </div>
                                     <!-- project image end -->
@@ -133,7 +133,7 @@ require_once __DIR__ . '/includes/header.php';
                                     <!-- project image begin -->
                                     <div class="item">
                                         <div class="hover relative rounded-1 overflow-hidden text-light">
-                                            <img src="images/project-single/2.webp" class="w-100" alt="">
+                                            <img src="images/project-single/2.webp" class="w-100" style="height: 480px; object-fit: cover; object-position: center;" alt="Residential Solar Energy">
                                         </div>
                                     </div>
                                     <!-- project image end -->
@@ -141,7 +141,7 @@ require_once __DIR__ . '/includes/header.php';
                                     <!-- project image begin -->
                                     <div class="item">
                                         <div class="hover relative rounded-1 overflow-hidden text-light">
-                                            <img src="images/project-single/3.webp" class="w-100" alt="">
+                                            <img src="images/project-single/3.webp" class="w-100" style="height: 480px; object-fit: cover; object-position: center;" alt="Clean Solar Power Solution">
                                         </div>
                                     </div>
                                     <!-- project image end -->
@@ -149,7 +149,7 @@ require_once __DIR__ . '/includes/header.php';
                                     <!-- project image begin -->
                                     <div class="item">
                                         <div class="hover relative rounded-1 overflow-hidden text-light">
-                                            <img src="images/project-single/4.webp" class="w-100" alt="">
+                                            <img src="images/project-single/4.webp" class="w-100" style="height: 480px; object-fit: cover; object-position: center;" alt="Modern Solar Architecture">
                                         </div>
                                     </div>
                                     <!-- project image end -->

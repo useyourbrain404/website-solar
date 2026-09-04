@@ -52,18 +52,18 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-lg-4 col-sm-6">
                             <div class="hover">
                                 <div class="relative overflow-hidden">
-                                    <a href="service-single.php" class="d-block hover">
+                                    <a href="service-single.php?id=solar-rooftop-systems" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/ro-1.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Rooftop Systems">
+                                            <img src="images/services/rooftop-solar-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Rooftop Systems Tamil Nadu">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php">
+                                            <a href="service-single.php?id=solar-rooftop-systems">
                                                 <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
                                             </a>
                                         </div>
-                                        <h4>Solar Rooftop Systems</h4>
+                                        <h4><a href="service-single.php?id=solar-rooftop-systems" class="text-dark text-decoration-none">Solar Rooftop Systems</a></h4>
                                         <p class="mb-0">Customized rooftop solar solutions that help homes, businesses, and industries generate clean power, reduce electricity costs, and achieve long-term energy savings.</p>
                                     </div>
                                 </div>
@@ -74,18 +74,18 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-lg-4 col-sm-6">
                             <div class="hover">
                                 <div class="relative overflow-hidden">
-                                    <a href="service-single.php" class="d-block hover">
+                                    <a href="service-single.php?id=solar-epc-utility-grid" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/reo1.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar EPC Utility Grid Projects">
+                                            <img src="images/services/epc-grid-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar EPC Utility Grid Projects Tamil Nadu">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php">
+                                            <a href="service-single.php?id=solar-epc-utility-grid">
                                                 <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
                                             </a>
                                         </div>
-                                        <h4>Solar EPC Utility Grid Projects</h4>
+                                        <h4><a href="service-single.php?id=solar-epc-utility-grid" class="text-dark text-decoration-none">Solar EPC Utility Grid Projects</a></h4>
                                         <p class="mb-0">End-to-end EPC services covering engineering, procurement, installation, testing, and commissioning of reliable grid-connected and utility-scale solar projects.</p>
                                     </div>
                                 </div>
@@ -96,18 +96,18 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-lg-4 col-sm-6">
                             <div class="hover">
                                 <div class="relative overflow-hidden">
-                                    <a href="service-single.php" class="d-block hover">
+                                    <a href="service-single.php?id=solar-farms-solutions" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/sero.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Farms Solutions">
+                                            <img src="images/services/solar-farm-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Farms Solutions Tamil Nadu">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php">
+                                            <a href="service-single.php?id=solar-farms-solutions">
                                                 <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
                                             </a>
                                         </div>
-                                        <h4>Solar Farms Solutions</h4>
+                                        <h4><a href="service-single.php?id=solar-farms-solutions" class="text-dark text-decoration-none">Solar Farms Solutions</a></h4>
                                         <p class="mb-0">Complete solar farm solutions for large-scale renewable energy generation, including project planning, system design, installation, commissioning, and performance optimization.</p>
                                     </div>
                                 </div>
@@ -118,18 +118,18 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-lg-4 col-sm-6">
                             <div class="hover">
                                 <div class="relative overflow-hidden">
-                                    <a href="service-single.php" class="d-block hover">
+                                    <a href="service-single.php?id=energy-auditing" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/4.webp" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Energy Auditing">
+                                            <img src="images/services/energy-auditing-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Energy Auditing AK ENERGIES">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php">
+                                            <a href="service-single.php?id=energy-auditing">
                                                 <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
                                             </a>
                                         </div>
-                                        <h4>Energy Auditing</h4>
+                                        <h4><a href="service-single.php?id=energy-auditing" class="text-dark text-decoration-none">Energy Auditing</a></h4>
                                         <p class="mb-0">Professional energy audits to identify energy-saving opportunities, optimize power consumption, improve efficiency, and reduce unnecessary operating costs.</p>
                                     </div>
                                 </div>
@@ -140,18 +140,18 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-lg-4 col-sm-6">
                             <div class="hover">
                                 <div class="relative overflow-hidden">
-                                    <a href="service-single.php" class="d-block hover">
+                                    <a href="service-single.php?id=solar-lighting-solutions" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/5.webp" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Lighting Solutions">
+                                            <img src="images/services/solar-lighting-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Lighting Solutions Tamil Nadu">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php">
+                                            <a href="service-single.php?id=solar-lighting-solutions">
                                                 <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
                                             </a>
                                         </div>
-                                        <h4>Solar Lighting Solutions</h4>
+                                        <h4><a href="service-single.php?id=solar-lighting-solutions" class="text-dark text-decoration-none">Solar Lighting Solutions</a></h4>
                                         <p class="mb-0">Efficient solar lighting systems for commercial, industrial, outdoor, and public applications, providing reliable illumination using clean renewable energy.</p>
                                     </div>
                                 </div>
@@ -162,18 +162,18 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-lg-4 col-sm-6">
                             <div class="hover">
                                 <div class="relative overflow-hidden">
-                                    <a href="service-single.php" class="d-block hover">
+                                    <a href="service-single.php?id=power-trading" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/6.webp" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Power Trading">
+                                            <img src="images/services/power-trading-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Power Trading AK ENERGIES">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php">
+                                            <a href="service-single.php?id=power-trading">
                                                 <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
                                             </a>
                                         </div>
-                                        <h4>Power Trading</h4>
+                                        <h4><a href="service-single.php?id=power-trading" class="text-dark text-decoration-none">Power Trading</a></h4>
                                         <p class="mb-0">Energy management and power trading solutions that help businesses optimize electricity usage, manage energy costs, and make effective use of renewable power.</p>
                                     </div>
                                 </div>
@@ -183,25 +183,27 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
             </section>
 
-            <!-- Why Choose AK ENERGIES / CTA Section -->
-            <section class="bg-dark text-light relative jarallax overflow-hidden">
+            <!-- Common CTA Section for All Service Pages -->
+            <section class="bg-dark text-light relative jarallax overflow-hidden py-5">
                 <img src="images/background/gradient-2.webp" class="jarallax-img" alt="">
                 <div class="container relative z-2">
                     <div class="row g-4 align-items-center justify-content-between">
                         <div class="col-lg-7">
-                            <div class="subtitle id-color wow fadeInUp mb-2">WHY CHOOSE US</div>
-                            <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">Why Choose AK ENERGIES?</h2>
-                            <div class="d-flex flex-wrap gap-2 my-3 wow fadeInUp" data-wow-delay=".3s">
-                                <span class="badge bg-color text-dark fs-14 px-3 py-2 fw-600 rounded-pill">Customized Solutions</span>
-                                <span class="badge bg-color text-dark fs-14 px-3 py-2 fw-600 rounded-pill">Expert Engineering</span>
-                                <span class="badge bg-color text-dark fs-14 px-3 py-2 fw-600 rounded-pill">Quality Execution</span>
-                                <span class="badge bg-color text-dark fs-14 px-3 py-2 fw-600 rounded-pill">Reliable Support</span>
-                            </div>
-                            <h4 class="text-white mt-4 mb-2 wow fadeInUp" data-wow-delay=".4s">Get Started with Solar Energy Today</h4>
-                            <p class="text-white-50 mb-0 wow fadeInUp" data-wow-delay=".5s">Let AK ENERGIES help you choose the right solar solution for your energy requirements.</p>
+                            <div class="subtitle id-color wow fadeInUp mb-2">POWER YOUR TOMORROW</div>
+                            <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">Ready to Power Your Future with Solar Energy?</h2>
+                            <p class="fs-16 text-white-50 mb-0 wow fadeInUp" data-wow-delay=".3s">
+                                Talk to <strong>AK ENERGIES</strong> about your project requirements and discover the right renewable energy solution for your needs.
+                            </p>
                         </div>
-                        <div class="col-lg-4 text-lg-end wow fadeInUp" data-wow-delay=".6s">
-                            <a href="contact.php" class="btn-main fx-slide"><span>GET A QUOTE</span></a>
+                        <div class="col-lg-5 text-lg-end wow fadeInUp" data-wow-delay=".4s">
+                            <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+                                <a href="contact.php" class="btn-main fx-slide">
+                                    <span>GET A QUOTE</span>
+                                </a>
+                                <a href="contact.php" class="btn-main btn-line fx-slide">
+                                    <span>CONTACT US</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

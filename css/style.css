@@ -15287,3 +15287,167 @@ header.smaller #btn-extra span {
 .bg-color .owl-theme .owl-dots .owl-dot.active {
   background: #ffffff !important;
 }
+
+/* ==========================================================================
+   As Seen On / Media & Client Logo Scroll Section
+   ========================================================================== */
+.as-seen-on-section {
+  position: relative;
+  background: #ffffff;
+  padding: 55px 0 65px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.as-seen-on-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: 0.3px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.as-seen-on-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.as-seen-on-row {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  margin-bottom: 16px;
+}
+
+.as-seen-on-row:last-child {
+  margin-bottom: 0;
+}
+
+.as-seen-on-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 0;
+  animation: asSeenOnScrollLeft 38s linear infinite;
+}
+
+.as-seen-on-track.scroll-right {
+  animation: asSeenOnScrollRight 38s linear infinite;
+}
+
+.as-seen-on-container:hover .as-seen-on-track {
+  animation-play-state: paused;
+}
+
+.client-logo-card {
+  width: 200px;
+  height: 80px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.client-logo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  border-color: #cbd5e1;
+}
+
+.client-logo-card img {
+  max-width: 155px;
+  max-height: 44px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.client-logo-card:hover img {
+  transform: scale(1.04);
+}
+
+@keyframes asSeenOnScrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes asSeenOnScrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 768px) {
+  .as-seen-on-section {
+    padding: 40px 0;
+  }
+  .client-logo-card {
+    width: 160px;
+    height: 68px;
+    padding: 10px 14px;
+  }
+  .client-logo-card img {
+    max-width: 125px;
+    max-height: 36px;
+  }
+  .as-seen-on-track {
+    gap: 12px;
+  }
+  .as-seen-on-row {
+    margin-bottom: 12px;
+  }
+}
+
+/* ==========================================================================
+   Project Single & Carousel Uniform Image Heights
+   ========================================================================== */
+#project-single-carousel .item,
+.owl-2-cols-center .item {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#project-single-carousel .item img,
+.owl-2-cols-center .item img {
+  width: 100% !important;
+  height: 480px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  border-radius: 8px;
+}
+
+@media (max-width: 992px) {
+  #project-single-carousel .item img,
+  .owl-2-cols-center .item img {
+    height: 380px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #project-single-carousel .item img,
+  .owl-2-cols-center .item img {
+    height: 300px !important;
+  }
+}

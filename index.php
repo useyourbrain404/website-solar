@@ -29,11 +29,11 @@ require_once __DIR__ . '/includes/header.php';
                             </div>
                         </div>
                         <div class="abs w-80">
-                            <img src="images/misc/s6.webp" class="w-70 rounded-1 overflow-hidden"
+                            <img src="images/misc/main-1.jpg" class="w-70 rounded-1 overflow-hidden"
                                 alt="AK ENERGIES Solar Installation">
                         </div>
                         <div class="mb-4 d-inline-block p-30 mb-4 mt-4 text-end">
-                            <img src="images/misc/s5.webp" class="w-80 rounded-1 overflow-hidden"
+                            <img src="images/misc/L-pro-4.jpg" class="w-80 rounded-1 overflow-hidden"
                                 alt="AK ENERGIES Solar Panels">
                         </div>
                     </div>
@@ -314,7 +314,9 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="subtitle wow fadeInUp mb-3">OUR SOLAR PROJECTS</div>
                     <h2 class="wow fadeInUp" data-wow-delay=".2s">Powering a Brighter Future <span class="op-3">with
                             Clean Energy</span></h2>
-                    <p class="lead mb-0 wow fadeInUp">Explore our solar installations across residential, commercial, and large-scale applications. Each project reflects our commitment to quality engineering, reliable technology, and efficient clean-energy solutions.</p>
+                    <p class="lead mb-0 wow fadeInUp">Explore our solar installations across residential, commercial,
+                        and large-scale applications. Each project reflects our commitment to quality engineering,
+                        reliable technology, and efficient clean-energy solutions.</p>
                     <div class="spacer-single"></div>
                     <div class="spacer-half"></div>
                 </div>
@@ -340,11 +342,15 @@ require_once __DIR__ . '/includes/header.php';
                                                 </div>
                                                 <div class="abs p-40 bottom-0 z-3">
                                                     <h3>Residential Rooftop Solar</h3>
-                                                    <p class="mb-0 hover-mh-60">Efficient rooftop solar systems designed to help homes generate clean electricity and reduce dependence on grid power.</p>
+                                                    <p class="mb-0 hover-mh-60">Efficient rooftop solar systems designed
+                                                        to help homes generate clean electricity and reduce dependence
+                                                        on grid power.</p>
                                                 </div>
                                                 <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2">
                                                 </div>
-                                                <img src="images/projects/pro-2.jpg" class="w-100 hover-scale-1-2" style="height: 480px; object-fit: cover;" alt="Residential Rooftop Solar">
+                                                <img src="images/projects/pro-2.jpg" class="w-100 hover-scale-1-2"
+                                                    style="height: 480px; object-fit: cover;"
+                                                    alt="Residential Rooftop Solar">
                                                 <div class="gradient-edge-bottom h-50"></div>
                                             </div>
                                         </a>
@@ -360,11 +366,15 @@ require_once __DIR__ . '/includes/header.php';
                                                 </div>
                                                 <div class="abs p-40 bottom-0 z-3">
                                                     <h3>Large-Scale Solar Projects</h3>
-                                                    <p class="mb-0 hover-mh-60">Professionally planned solar installations for large-scale renewable energy generation with a focus on reliable performance and long-term value.</p>
+                                                    <p class="mb-0 hover-mh-60">Professionally planned solar
+                                                        installations for large-scale renewable energy generation with a
+                                                        focus on reliable performance and long-term value.</p>
                                                 </div>
                                                 <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2">
                                                 </div>
-                                                <img src="images/projects/L-pro-4.jpg" class="w-100 hover-scale-1-2" style="height: 480px; object-fit: cover;" alt="Large-Scale Solar Projects">
+                                                <img src="images/projects/L-pro-4.jpg" class="w-100 hover-scale-1-2"
+                                                    style="height: 480px; object-fit: cover;"
+                                                    alt="Large-Scale Solar Projects">
                                                 <div class="gradient-edge-bottom h-50"></div>
                                             </div>
                                         </a>
@@ -380,11 +390,15 @@ require_once __DIR__ . '/includes/header.php';
                                                 </div>
                                                 <div class="abs p-40 bottom-0 z-3">
                                                     <h3>Commercial &amp; Industrial Solar</h3>
-                                                    <p class="mb-0 hover-mh-60">Customized solar solutions for businesses and industries, designed to improve energy efficiency and deliver long-term savings.</p>
+                                                    <p class="mb-0 hover-mh-60">Customized solar solutions for
+                                                        businesses and industries, designed to improve energy efficiency
+                                                        and deliver long-term savings.</p>
                                                 </div>
                                                 <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2">
                                                 </div>
-                                                <img src="images/projects/2-pro.jpg" class="w-100 hover-scale-1-2" style="height: 480px; object-fit: cover;" alt="Commercial & Industrial Solar">
+                                                <img src="images/projects/2-pro.jpg" class="w-100 hover-scale-1-2"
+                                                    style="height: 480px; object-fit: cover;"
+                                                    alt="Commercial & Industrial Solar">
                                                 <div class="gradient-edge-bottom h-50"></div>
                                             </div>
                                         </a>
@@ -553,19 +567,168 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section aria-label="section" class="p-0">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <a class="d-block hover popup-youtube" href="https://www.youtube.com/watch?v=C6rf51uHWJg">
-                        <div class="relative overflow-hidden">
-                            <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                <div class="player circle wow scaleIn"><span></span></div>
-                            </div>
-                            <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                            <img src="images/background/w1.webp" class="w-100 hover-scale-1-1" alt="">
+
+
+    <!-- As Seen On / Client & Media Logo Scroll Section -->
+    <section class="as-seen-on-section">
+        <div class="container-fluid p-0">
+            <h3 class="as-seen-on-title wow fadeInUp" data-wow-delay=".1s">As Seen On</h3>
+
+            <div class="as-seen-on-container">
+                <!-- Row 1: Scrolling Left -->
+                <div class="as-seen-on-row">
+                    <div class="as-seen-on-track">
+                        <!-- Item 1: Good Returns -->
+                        <div class="client-logo-card" title="Good Returns">
+                            <img src="images/clients/good-returns.svg" alt="Good Returns">
                         </div>
-                    </a>
+                        <!-- Item 2: Live Hindustan -->
+                        <div class="client-logo-card" title="Live Hindustan">
+                            <img src="images/clients/hindustan.svg" alt="Live Hindustan">
+                        </div>
+                        <!-- Item 3: Hindustan Times -->
+                        <div class="client-logo-card" title="Hindustan Times">
+                            <img src="images/clients/hindustan-times.svg" alt="Hindustan Times">
+                        </div>
+                        <!-- Item 4: HRKatha -->
+                        <div class="client-logo-card" title="HRKatha">
+                            <img src="images/clients/hr-katha.svg" alt="HR Katha">
+                        </div>
+                        <!-- Item 5: Aaj Tak -->
+                        <div class="client-logo-card" title="Aaj Tak">
+                            <img src="images/clients/aaj-tak.svg" alt="Aaj Tak">
+                        </div>
+                        <!-- Item 6: BusinessLine -->
+                        <div class="client-logo-card" title="The Hindu BusinessLine">
+                            <img src="images/clients/business-line.svg" alt="The Hindu BusinessLine">
+                        </div>
+                        <!-- Item 7: Business Standard -->
+                        <div class="client-logo-card" title="Business Standard">
+                            <img src="images/clients/business-standard.svg" alt="Business Standard">
+                        </div>
+                        <!-- Item 8: Economic Times -->
+                        <div class="client-logo-card" title="The Economic Times">
+                            <img src="images/clients/economic-times.svg" alt="The Economic Times">
+                        </div>
+                        <!-- Item 9: Moneycontrol -->
+                        <div class="client-logo-card" title="Moneycontrol">
+                            <img src="images/clients/moneycontrol.svg" alt="Moneycontrol">
+                        </div>
+                        <!-- Item 10: Fortune -->
+                        <div class="client-logo-card" title="Fortune India">
+                            <img src="images/clients/fortune.svg" alt="Fortune India">
+                        </div>
+
+                        <!-- Duplicate Set for Seamless Continuous Scroll -->
+                        <div class="client-logo-card" title="Good Returns">
+                            <img src="images/clients/good-returns.svg" alt="Good Returns">
+                        </div>
+                        <div class="client-logo-card" title="Live Hindustan">
+                            <img src="images/clients/hindustan.svg" alt="Live Hindustan">
+                        </div>
+                        <div class="client-logo-card" title="Hindustan Times">
+                            <img src="images/clients/hindustan-times.svg" alt="Hindustan Times">
+                        </div>
+                        <div class="client-logo-card" title="HRKatha">
+                            <img src="images/clients/hr-katha.svg" alt="HR Katha">
+                        </div>
+                        <div class="client-logo-card" title="Aaj Tak">
+                            <img src="images/clients/aaj-tak.svg" alt="Aaj Tak">
+                        </div>
+                        <div class="client-logo-card" title="The Hindu BusinessLine">
+                            <img src="images/clients/business-line.svg" alt="The Hindu BusinessLine">
+                        </div>
+                        <div class="client-logo-card" title="Business Standard">
+                            <img src="images/clients/business-standard.svg" alt="Business Standard">
+                        </div>
+                        <div class="client-logo-card" title="The Economic Times">
+                            <img src="images/clients/economic-times.svg" alt="The Economic Times">
+                        </div>
+                        <div class="client-logo-card" title="Moneycontrol">
+                            <img src="images/clients/moneycontrol.svg" alt="Moneycontrol">
+                        </div>
+                        <div class="client-logo-card" title="Fortune India">
+                            <img src="images/clients/fortune.svg" alt="Fortune India">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Scrolling Right -->
+                <div class="as-seen-on-row">
+                    <div class="as-seen-on-track scroll-right">
+                        <!-- Item 1: The Week -->
+                        <div class="client-logo-card" title="The Week">
+                            <img src="images/clients/the-week.svg" alt="The Week">
+                        </div>
+                        <!-- Item 2: Times Now -->
+                        <div class="client-logo-card" title="Times Now">
+                            <img src="images/clients/times-now.svg" alt="Times Now">
+                        </div>
+                        <!-- Item 3: YourStory -->
+                        <div class="client-logo-card" title="YourStory">
+                            <img src="images/clients/yourstory.svg" alt="YourStory">
+                        </div>
+                        <!-- Item 4: Zee Business -->
+                        <div class="client-logo-card" title="Zee Business">
+                            <img src="images/clients/zee-business.svg" alt="Zee Business">
+                        </div>
+                        <!-- Item 5: India.com -->
+                        <div class="client-logo-card" title="India.com">
+                            <img src="images/clients/india-com.svg" alt="India.com">
+                        </div>
+                        <!-- Item 6: IIFL -->
+                        <div class="client-logo-card" title="IIFL">
+                            <img src="images/clients/iifl.svg" alt="IIFL">
+                        </div>
+                        <!-- Item 7: India Today -->
+                        <div class="client-logo-card" title="India Today">
+                            <img src="images/clients/india-today.svg" alt="India Today">
+                        </div>
+                        <!-- Item 8: CNBC TV18 -->
+                        <div class="client-logo-card" title="CNBC TV18">
+                            <img src="images/clients/cnbc-tv18.svg" alt="CNBC TV18">
+                        </div>
+                        <!-- Item 9: LiveMint -->
+                        <div class="client-logo-card" title="LiveMint">
+                            <img src="images/clients/livemint.svg" alt="LiveMint">
+                        </div>
+                        <!-- Item 10: NDTV Profit -->
+                        <div class="client-logo-card" title="NDTV Profit">
+                            <img src="images/clients/ndtv-profit.svg" alt="NDTV Profit">
+                        </div>
+
+                        <!-- Duplicate Set for Seamless Continuous Scroll -->
+                        <div class="client-logo-card" title="The Week">
+                            <img src="images/clients/the-week.svg" alt="The Week">
+                        </div>
+                        <div class="client-logo-card" title="Times Now">
+                            <img src="images/clients/times-now.svg" alt="Times Now">
+                        </div>
+                        <div class="client-logo-card" title="YourStory">
+                            <img src="images/clients/yourstory.svg" alt="YourStory">
+                        </div>
+                        <div class="client-logo-card" title="Zee Business">
+                            <img src="images/clients/zee-business.svg" alt="Zee Business">
+                        </div>
+                        <div class="client-logo-card" title="India.com">
+                            <img src="images/clients/india-com.svg" alt="India.com">
+                        </div>
+                        <div class="client-logo-card" title="IIFL">
+                            <img src="images/clients/iifl.svg" alt="IIFL">
+                        </div>
+                        <div class="client-logo-card" title="India Today">
+                            <img src="images/clients/india-today.svg" alt="India Today">
+                        </div>
+                        <div class="client-logo-card" title="CNBC TV18">
+                            <img src="images/clients/cnbc-tv18.svg" alt="CNBC TV18">
+                        </div>
+                        <div class="client-logo-card" title="LiveMint">
+                            <img src="images/clients/livemint.svg" alt="LiveMint">
+                        </div>
+                        <div class="client-logo-card" title="NDTV Profit">
+                            <img src="images/clients/ndtv-profit.svg" alt="NDTV Profit">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
