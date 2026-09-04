@@ -327,11 +327,11 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="col-lg-12 wow fadeInUp">
                     <div class="overflow-hidden rounded-1">
                         <div class="relative wow fadeIn">
-                            <div class="owl-custom-nav menu-float" data-target="#project-single-carousel">
+                            <div class="owl-custom-nav menu-float" data-target="#projects-carousel">
                                 <a class="btn-next"></a>
                                 <a class="btn-prev"></a>
 
-                                <div id="project-single-carousel" class="owl-3-cols owl-carousel owl-theme">
+                                <div id="projects-carousel" class="owl-3-cols owl-carousel owl-theme">
                                     <!-- Card 1 -->
                                     <div class="item">
                                         <a href="projects.php">
