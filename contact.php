@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/includes/db.php';
+
 // Handle form submission when requested via POST
 if (($_SERVER["REQUEST_METHOD"] ?? '') === "POST") {
     $name = strip_tags(trim($_POST["name"] ?? ''));
@@ -8,16 +10,20 @@ if (($_SERVER["REQUEST_METHOD"] ?? '') === "POST") {
 
     if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
-        echo "Please complete all required fields.";
+        echo "Please complete all required fields with a valid email.";
         exit;
     }
 
+    // Save inquiry to MySQL database
+    save_enquiry($name, $email, $phone, 'General Quote', $message);
+
+    // Optional mail notification
     $recipient = "support@akenergies.com";
     $subject = "New Contact Form Submission from " . $name;
     $email_content = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message\n";
     $email_headers = "From: $name <$email>";
-
     @mail($recipient, $subject, $email_content, $email_headers);
+
     http_response_code(200);
     echo "sent";
     exit;

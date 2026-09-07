@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/includes/db.php';
+
 $page_title = "Our Services - AK Energies";
 $page_description = "Explore our comprehensive solar energy and power system services.";
 $current_page = "services";
@@ -8,6 +10,8 @@ $extra_scripts = [
 ];
 require_once __DIR__ . '/includes/head.php';
 require_once __DIR__ . '/includes/header.php';
+
+$services = get_active_services();
 ?>
 
         <!-- content begin -->
@@ -48,137 +52,37 @@ require_once __DIR__ . '/includes/header.php';
                     </div>
 
                     <div class="row g-4">
-                        <!-- 01. Solar Rooftop Systems -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
-                                <div class="relative overflow-hidden">
-                                    <a href="service-single.php?id=solar-rooftop-systems" class="d-block hover">
-                                        <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/rooftop-solar-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Rooftop Systems Tamil Nadu">
+                        <?php if (!empty($services)): ?>
+                            <?php foreach ($services as $s): 
+                                $card_img = get_image_url($s['card_image'], 'images/services/rooftop-solar-tn.jpg');
+                                $link = 'service-single.php?id=' . urlencode($s['slug']);
+                            ?>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="hover">
+                                    <div class="relative overflow-hidden">
+                                        <a href="<?= htmlspecialchars($link) ?>" class="d-block hover">
+                                            <div class="relative overflow-hidden rounded-1">
+                                                <img src="<?= htmlspecialchars($card_img) ?>" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="<?= htmlspecialchars($s['title']) ?>">
+                                            </div>
+                                        </a>
+                                        <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm" style="min-height: 200px;">
+                                            <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
+                                                <a href="<?= htmlspecialchars($link) ?>">
+                                                    <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
+                                                </a>
+                                            </div>
+                                            <h4><a href="<?= htmlspecialchars($link) ?>" class="text-dark text-decoration-none"><?= htmlspecialchars($s['title']) ?></a></h4>
+                                            <p class="mb-0"><?= htmlspecialchars(strip_tags($s['short_description'])) ?></p>
                                         </div>
-                                    </a>
-                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
-                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php?id=solar-rooftop-systems">
-                                                <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                            </a>
-                                        </div>
-                                        <h4><a href="service-single.php?id=solar-rooftop-systems" class="text-dark text-decoration-none">Solar Rooftop Systems</a></h4>
-                                        <p class="mb-0">Customized rooftop solar solutions that help homes, businesses, and industries generate clean power, reduce electricity costs, and achieve long-term energy savings.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- 02. Solar EPC Utility Grid Projects -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
-                                <div class="relative overflow-hidden">
-                                    <a href="service-single.php?id=solar-epc-utility-grid" class="d-block hover">
-                                        <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/epc-grid-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar EPC Utility Grid Projects Tamil Nadu">
-                                        </div>
-                                    </a>
-                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
-                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php?id=solar-epc-utility-grid">
-                                                <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                            </a>
-                                        </div>
-                                        <h4><a href="service-single.php?id=solar-epc-utility-grid" class="text-dark text-decoration-none">Solar EPC Utility Grid Projects</a></h4>
-                                        <p class="mb-0">End-to-end EPC services covering engineering, procurement, installation, testing, and commissioning of reliable grid-connected and utility-scale solar projects.</p>
-                                    </div>
-                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="col-12 text-center py-5">
+                                <p class="lead text-muted">No services available at the moment. Please check back soon.</p>
                             </div>
-                        </div>
-
-                        <!-- 03. Solar Farms Solutions -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
-                                <div class="relative overflow-hidden">
-                                    <a href="service-single.php?id=solar-farms-solutions" class="d-block hover">
-                                        <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/solar-farm-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Farms Solutions Tamil Nadu">
-                                        </div>
-                                    </a>
-                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
-                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php?id=solar-farms-solutions">
-                                                <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                            </a>
-                                        </div>
-                                        <h4><a href="service-single.php?id=solar-farms-solutions" class="text-dark text-decoration-none">Solar Farms Solutions</a></h4>
-                                        <p class="mb-0">Complete solar farm solutions for large-scale renewable energy generation, including project planning, system design, installation, commissioning, and performance optimization.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 04. Energy Auditing -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
-                                <div class="relative overflow-hidden">
-                                    <a href="service-single.php?id=energy-auditing" class="d-block hover">
-                                        <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/energy-auditing-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Energy Auditing AK ENERGIES">
-                                        </div>
-                                    </a>
-                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
-                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php?id=energy-auditing">
-                                                <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                            </a>
-                                        </div>
-                                        <h4><a href="service-single.php?id=energy-auditing" class="text-dark text-decoration-none">Energy Auditing</a></h4>
-                                        <p class="mb-0">Professional energy audits to identify energy-saving opportunities, optimize power consumption, improve efficiency, and reduce unnecessary operating costs.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 05. Solar Lighting Solutions -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
-                                <div class="relative overflow-hidden">
-                                    <a href="service-single.php?id=solar-lighting-solutions" class="d-block hover">
-                                        <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/solar-lighting-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Solar Lighting Solutions Tamil Nadu">
-                                        </div>
-                                    </a>
-                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
-                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php?id=solar-lighting-solutions">
-                                                <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                            </a>
-                                        </div>
-                                        <h4><a href="service-single.php?id=solar-lighting-solutions" class="text-dark text-decoration-none">Solar Lighting Solutions</a></h4>
-                                        <p class="mb-0">Efficient solar lighting systems for commercial, industrial, outdoor, and public applications, providing reliable illumination using clean renewable energy.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 06. Power Trading -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
-                                <div class="relative overflow-hidden">
-                                    <a href="service-single.php?id=power-trading" class="d-block hover">
-                                        <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/power-trading-tn.jpg" class="w-100 hover-scale-1-2" style="height: 280px; object-fit: cover;" alt="Power Trading AK ENERGIES">
-                                        </div>
-                                    </a>
-                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm">
-                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="service-single.php?id=power-trading">
-                                                <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                            </a>
-                                        </div>
-                                        <h4><a href="service-single.php?id=power-trading" class="text-dark text-decoration-none">Power Trading</a></h4>
-                                        <p class="mb-0">Energy management and power trading solutions that help businesses optimize electricity usage, manage energy costs, and make effective use of renewable power.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </section>

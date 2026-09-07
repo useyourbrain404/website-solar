@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/includes/db.php';
+
 $page_title = "AK Energies - Solar & Renewable Energy";
 $page_description = "AK Energies - Power Your Future with Clean Energy";
 $current_page = "home";
@@ -8,6 +10,9 @@ $extra_scripts = [
 ];
 require_once __DIR__ . '/includes/head.php';
 require_once __DIR__ . '/includes/header.php';
+
+$home_services = get_active_services(3);
+$home_projects = get_active_projects(6);
 ?>
 
 <!-- content begin -->
@@ -99,79 +104,40 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="row g-4">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="hover">
-                        <div class="relative overflow-hidden">
-                            <a href="service-single.php" class="d-block hover">
-                                <div class="relative overflow-hidden rounded-1">
-                                    <img src="images/services/ro-1.jpg" class="w-100 hover-scale-1-2"
-                                        style="height: 300px; object-fit: cover;" alt="SOLAR ROOFTOP SYSTEMS">
+                <?php if (!empty($home_services)): ?>
+                    <?php foreach ($home_services as $hs): 
+                        $hs_img = get_image_url($hs['card_image'], 'images/services/rooftop-solar-tn.jpg');
+                        $hs_link = 'service-single.php?id=' . urlencode($hs['slug']);
+                        $hs_desc = strip_tags($hs['short_description']);
+                        if (mb_strlen($hs_desc) > 130) {
+                            $hs_desc = mb_substr($hs_desc, 0, 130) . '...';
+                        }
+                    ?>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="hover">
+                            <div class="relative overflow-hidden">
+                                <a href="<?= htmlspecialchars($hs_link) ?>" class="d-block hover">
+                                    <div class="relative overflow-hidden rounded-1">
+                                        <img src="<?= htmlspecialchars($hs_img) ?>" class="w-100 hover-scale-1-2"
+                                            style="height: 300px; object-fit: cover;" alt="<?= htmlspecialchars($hs['title']) ?>">
+                                    </div>
+                                </a>
+                                <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm" style="min-height: 200px;">
+                                    <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
+                                        <a href="<?= htmlspecialchars($hs_link) ?>">
+                                            <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
+                                        </a>
+                                    </div>
+                                    <h4><a href="<?= htmlspecialchars($hs_link) ?>" class="text-dark text-decoration-none"><?= htmlspecialchars($hs['title']) ?></a></h4>
+                                    <p class="mb-0"><?= htmlspecialchars($hs_desc) ?></p>
                                 </div>
-                            </a>
-                            <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
-                                <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                    <a href="service-single.php">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                    </a>
-                                </div>
-                                <h4>SOLAR ROOFTOP SYSTEMS</h4>
-                                <p class="mb-0">Turn your rooftop into a reliable source of clean energy with customized
-                                    solar systems designed to reduce electricity costs and deliver long-term savings.
-                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
 
-                <div class="col-lg-4 col-sm-6">
-                    <div class="hover">
-                        <div class="relative overflow-hidden">
-                            <a href="service-single.php" class="d-block hover">
-                                <div class="relative overflow-hidden rounded-1">
-                                    <img src="images/services/reo1.jpg" class="w-100 hover-scale-1-2"
-                                        style="height: 300px; object-fit: cover;" alt="SOLAR EPC UTILITY GRID PROJECTS">
-                                </div>
-                            </a>
-                            <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
-                                <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                    <a href="service-single.php">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                    </a>
-                                </div>
-                                <h4>SOLAR EPC UTILITY GRID PROJECTS</h4>
-                                <p class="mb-0">Complete EPC solutions covering engineering, procurement, installation,
-                                    testing, and commissioning for efficient and reliable grid-connected solar power
-                                    projects.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="hover">
-                        <div class="relative overflow-hidden">
-                            <a href="service-single.php" class="d-block hover">
-                                <div class="relative overflow-hidden rounded-1">
-                                    <img src="images/services/sero.jpg" class="w-100 hover-scale-1-2"
-                                        style="height: 300px; object-fit: cover;" alt="SOLAR FARMS SOLUTIONS">
-                                </div>
-                            </a>
-                            <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
-                                <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                    <a href="service-single.php">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
-                                    </a>
-                                </div>
-                                <h4>SOLAR FARMS SOLUTIONS</h4>
-                                <p class="mb-0">End-to-end solar farm solutions for large-scale renewable energy
-                                    generation, from project planning and system design to installation and
-                                    commissioning.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center">
+                <div class="text-center mt-4">
                     <a class="btn-main fx-slide" href="services.php"><span>VIEW ALL SERVICES</span></a>
                 </div>
 
@@ -332,78 +298,37 @@ require_once __DIR__ . '/includes/header.php';
                                 <a class="btn-prev"></a>
 
                                 <div id="projects-carousel" class="owl-3-cols owl-carousel owl-theme">
-                                    <!-- Card 1 -->
-                                    <div class="item">
-                                        <a href="projects.php">
-                                            <div class="hover rounded-1 relative overflow-hidden text-light">
-                                                <div class="abs p-40 top-0 z-3">
-                                                    <img src="images/misc/up-right-arrow-white.webp"
-                                                        class="w-10 mb-3 wow scaleIn" alt="">
+                                    <?php if (!empty($home_projects)): ?>
+                                        <?php foreach ($home_projects as $hp): 
+                                            $hp_img = get_image_url($hp['card_image'], 'images/projects/1.webp');
+                                            $hp_link = 'project-single.php?id=' . urlencode($hp['slug']);
+                                            $hp_excerpt = strip_tags($hp['intro_description']);
+                                            if (mb_strlen($hp_excerpt) > 100) {
+                                                $hp_excerpt = mb_substr($hp_excerpt, 0, 100) . '...';
+                                            }
+                                        ?>
+                                        <div class="item">
+                                            <a href="<?= htmlspecialchars($hp_link) ?>">
+                                                <div class="hover rounded-1 relative overflow-hidden text-light">
+                                                    <div class="abs p-40 top-0 z-3">
+                                                        <img src="images/misc/up-right-arrow-white.webp"
+                                                            class="w-10 mb-3 wow scaleIn" alt="">
+                                                    </div>
+                                                    <div class="abs p-40 bottom-0 z-3">
+                                                        <h3><?= htmlspecialchars($hp['title']) ?></h3>
+                                                        <p class="mb-0 hover-mh-60"><?= htmlspecialchars($hp_excerpt) ?></p>
+                                                    </div>
+                                                    <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2">
+                                                    </div>
+                                                    <img src="<?= htmlspecialchars($hp_img) ?>" class="w-100 hover-scale-1-2"
+                                                        style="height: 480px; object-fit: cover;"
+                                                        alt="<?= htmlspecialchars($hp['title']) ?>">
+                                                    <div class="gradient-edge-bottom h-50"></div>
                                                 </div>
-                                                <div class="abs p-40 bottom-0 z-3">
-                                                    <h3>Residential Rooftop Solar</h3>
-                                                    <p class="mb-0 hover-mh-60">Efficient rooftop solar systems designed
-                                                        to help homes generate clean electricity and reduce dependence
-                                                        on grid power.</p>
-                                                </div>
-                                                <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2">
-                                                </div>
-                                                <img src="images/projects/pro-2.jpg" class="w-100 hover-scale-1-2"
-                                                    style="height: 480px; object-fit: cover;"
-                                                    alt="Residential Rooftop Solar">
-                                                <div class="gradient-edge-bottom h-50"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                    <!-- Card 2 -->
-                                    <div class="item">
-                                        <a href="projects.php">
-                                            <div class="hover rounded-1 relative overflow-hidden text-light">
-                                                <div class="abs p-40 top-0 z-3">
-                                                    <img src="images/misc/up-right-arrow-white.webp"
-                                                        class="w-10 mb-3 wow scaleIn" alt="">
-                                                </div>
-                                                <div class="abs p-40 bottom-0 z-3">
-                                                    <h3>Large-Scale Solar Projects</h3>
-                                                    <p class="mb-0 hover-mh-60">Professionally planned solar
-                                                        installations for large-scale renewable energy generation with a
-                                                        focus on reliable performance and long-term value.</p>
-                                                </div>
-                                                <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2">
-                                                </div>
-                                                <img src="images/projects/L-pro-4.jpg" class="w-100 hover-scale-1-2"
-                                                    style="height: 480px; object-fit: cover;"
-                                                    alt="Large-Scale Solar Projects">
-                                                <div class="gradient-edge-bottom h-50"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                    <!-- Card 3 -->
-                                    <div class="item">
-                                        <a href="projects.php">
-                                            <div class="hover rounded-1 relative overflow-hidden text-light">
-                                                <div class="abs p-40 top-0 z-3">
-                                                    <img src="images/misc/up-right-arrow-white.webp"
-                                                        class="w-10 mb-3 wow scaleIn" alt="">
-                                                </div>
-                                                <div class="abs p-40 bottom-0 z-3">
-                                                    <h3>Commercial &amp; Industrial Solar</h3>
-                                                    <p class="mb-0 hover-mh-60">Customized solar solutions for
-                                                        businesses and industries, designed to improve energy efficiency
-                                                        and deliver long-term savings.</p>
-                                                </div>
-                                                <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2">
-                                                </div>
-                                                <img src="images/projects/2-pro.jpg" class="w-100 hover-scale-1-2"
-                                                    style="height: 480px; object-fit: cover;"
-                                                    alt="Commercial & Industrial Solar">
-                                                <div class="gradient-edge-bottom h-50"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-
+                                            </a>
+                                        </div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

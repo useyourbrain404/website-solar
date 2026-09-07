@@ -1,163 +1,37 @@
 <?php
-// Service database
-$services_data = [
-    'solar-rooftop-systems' => [
-        'id' => 'solar-rooftop-systems',
-        'num' => '01',
+require_once __DIR__ . '/includes/db.php';
+
+$param = $_GET['id'] ?? 'solar-rooftop-systems';
+$service = get_service_by_slug_or_id($param);
+
+// If not found, try getting the first available active service
+if (!$service) {
+    $all_services = get_active_services(1);
+    if (!empty($all_services)) {
+        $service = $all_services[0];
+    }
+}
+
+// Fallback safety if database is completely empty
+if (!$service) {
+    $service = [
+        'id' => 1,
         'title' => 'Solar Rooftop Systems',
-        'subtitle' => 'Residential, Commercial & Industrial Rooftop Solar',
-        'intro' => 'Turn your unused rooftop space into a reliable source of clean energy with customized solar solutions from AK ENERGIES. We design and install efficient rooftop systems for homes, businesses, industries, and institutions.',
-        'image' => 'images/services/rooftop-solar-tn.jpg',
-        'alt' => 'Tamil Nadu Rooftop Solar Installation with Technicians',
-        'what_we_provide' => [
-            'Rooftop site assessment',
-            'Solar system design',
-            'Capacity planning',
-            'Engineering and installation',
-            'Grid-connected solutions',
-            'Testing and commissioning',
-            'Performance support'
-        ],
-        'why_choose' => 'Our rooftop systems help reduce electricity costs, improve energy independence, and generate clean renewable power for years to come.',
-        'benefits' => [
-            ['title' => 'Significant Cost Reduction', 'desc' => 'Cut your monthly electricity expenditures by up to 70%-80% with clean solar energy generated on-site.'],
-            ['title' => 'Net Metering Ready', 'desc' => 'Export surplus daytime energy back to the grid and receive credits on your utility billing cycle.'],
-            ['title' => 'Customized Structural Engineering', 'desc' => 'Durable mounting structures engineered for flat RCC terraces, industrial sheds, and tiled roofs.']
-        ]
-    ],
-    'solar-epc-utility-grid' => [
-        'id' => 'solar-epc-utility-grid',
-        'num' => '02',
-        'title' => 'Solar EPC Utility Grid Projects',
-        'subtitle' => 'Turnkey Engineering, Procurement & Grid Commissioning',
-        'intro' => 'AK ENERGIES delivers complete EPC solutions for utility-scale and grid-connected solar projects, managing the project from engineering and procurement through installation and commissioning.',
-        'image' => 'images/services/epc-grid-tn.jpg',
-        'alt' => 'Large Tamil Nadu Utility Grid Solar Power Plant with Engineers',
-        'what_we_provide' => [
-            'Project planning',
-            'Site assessment',
-            'Detailed engineering',
-            'Procurement',
-            'Solar plant installation',
-            'Electrical works',
-            'Testing and commissioning',
-            'Grid integration',
-            'Performance monitoring'
-        ],
-        'why_choose' => 'Our end-to-end EPC approach ensures professional execution, quality control, efficient project delivery, and reliable long-term solar plant performance.',
-        'benefits' => [
-            ['title' => 'Turnkey EPC Execution', 'desc' => 'Single-point accountability across land survey, design, procurement, construction, and grid sync.'],
-            ['title' => 'High Generation Output (PLF)', 'desc' => 'Tier-1 high-efficiency solar modules and multi-MPPT central inverters for optimal yield.'],
-            ['title' => 'Substation & Grid Liaison', 'desc' => 'Full statutory approvals, HT transmission lines, and utility interconnect compliance.']
-        ]
-    ],
-    'solar-farms-solutions' => [
-        'id' => 'solar-farms-solutions',
-        'num' => '03',
-        'title' => 'Solar Farms Solutions',
-        'subtitle' => 'Large-Scale Ground-Mounted Solar Park Solutions',
-        'intro' => 'We provide complete solar farm solutions for large-scale renewable energy generation. From initial planning and system design to installation and commissioning, AK ENERGIES manages every stage of the project.',
-        'image' => 'images/services/solar-farm-tn.jpg',
-        'alt' => 'Large Solar Farm in Tamil Nadu Agricultural Landscape with Workers',
-        'what_we_provide' => [
-            'Site evaluation',
-            'Solar resource assessment',
-            'Project planning',
-            'Plant design',
-            'Engineering',
-            'Procurement',
-            'Installation',
-            'Commissioning',
-            'Plant monitoring',
-            'Performance optimization'
-        ],
-        'why_choose' => 'Our solar farm solutions are designed to maximize energy generation, improve plant efficiency, and deliver dependable renewable power over the long term.',
-        'benefits' => [
-            ['title' => 'Land Optimization & Topography', 'desc' => 'Precision layout mapping, drainage engineering, and tracker-compatible mounting.'],
-            ['title' => 'Advanced SCADA Monitoring', 'desc' => 'Real-time string-level telemetry, weather station integration, and predictive loss analytics.'],
-            ['title' => 'Comprehensive O&M Support', 'desc' => 'Preventive maintenance, module washing workflows, and round-the-clock plant diagnostics.']
-        ]
-    ],
-    'energy-auditing' => [
-        'id' => 'energy-auditing',
-        'num' => '04',
-        'title' => 'Energy Auditing',
-        'subtitle' => 'Comprehensive Power Diagnostics & Efficiency Optimization',
-        'intro' => 'AK ENERGIES helps businesses understand how energy is being consumed and identify practical opportunities to improve efficiency, reduce power wastage, and control operating costs.',
-        'image' => 'images/services/energy-auditing-tn.jpg',
-        'alt' => 'Indian Energy Engineer Inspecting Electrical Solar Equipment',
-        'what_we_provide' => [
-            'Energy consumption assessment',
-            'Electrical system inspection',
-            'Load analysis',
-            'Energy performance evaluation',
-            'Loss identification',
-            'Efficiency recommendations',
-            'Energy-saving opportunities',
-            'Improvement planning'
-        ],
-        'why_choose' => 'A professional energy audit provides clear insights into energy usage and helps organizations make informed decisions for better efficiency and long-term savings.',
-        'benefits' => [
-            ['title' => 'Thermal Imaging & Power Quality', 'desc' => 'Detect harmonic distortions, power factor drops, hot spots, and transformer losses.'],
-            ['title' => 'Cost-Reduction Roadmap', 'desc' => 'Prioritized conservation measures categorized by investment requirements and ROI.'],
-            ['title' => 'Regulatory & ISO Compliance', 'desc' => 'Certified auditing methodologies aligned with national energy conservation norms.']
-        ]
-    ],
-    'solar-lighting-solutions' => [
-        'id' => 'solar-lighting-solutions',
-        'num' => '05',
-        'title' => 'Solar Lighting Solutions',
-        'subtitle' => 'Reliable LED Outdoor, Street & Campus Illumination',
-        'intro' => 'AK ENERGIES provides efficient solar lighting solutions that use clean renewable energy to deliver reliable illumination for outdoor, commercial, industrial, institutional, and public applications.',
-        'image' => 'images/services/solar-lighting-tn.jpg',
-        'alt' => 'Tamil Nadu Public Road with Solar Street Lights and Modern LED Illumination',
-        'what_we_provide' => [
-            'Solar street lighting',
-            'Solar outdoor lighting',
-            'LED solar lighting',
-            'Solar lighting system design',
-            'Installation',
-            'System maintenance',
-            'Battery and controller solutions'
-        ],
-        'why_choose' => 'Solar lighting reduces dependence on conventional electricity while providing reliable and energy-efficient lighting for different applications.',
-        'benefits' => [
-            ['title' => 'Zero Electricity Bills', 'desc' => 'Stand-alone renewable lighting operating completely independent of the power grid.'],
-            ['title' => 'Smart Dusk-to-Dawn Controllers', 'desc' => 'Automated micro-controllers with intelligent dimming and motion sensing for battery longevity.'],
-            ['title' => 'Durable LiFePO4 Batteries', 'desc' => 'High-cycle lithium iron phosphate battery packs built to endure tropical Indian climates.']
-        ]
-    ],
-    'power-trading' => [
-        'id' => 'power-trading',
-        'num' => '06',
-        'title' => 'Power Trading',
-        'subtitle' => 'Open Access, Power Procurement & Energy Cost Management',
-        'intro' => 'AK ENERGIES provides power trading and energy management solutions designed to help businesses manage their electricity requirements efficiently and make better use of available renewable energy.',
-        'image' => 'images/services/power-trading-tn.jpg',
-        'alt' => 'Indian Renewable Energy Power Trading Control Room & Solar Grid Telemetry',
-        'what_we_provide' => [
-            'Power procurement support',
-            'Energy management',
-            'Electricity cost optimization',
-            'Renewable energy integration',
-            'Power scheduling support',
-            'Energy consumption planning'
-        ],
-        'why_choose' => 'Our approach helps businesses make informed energy decisions, optimize power costs, and improve the overall efficiency of their energy strategy.',
-        'benefits' => [
-            ['title' => 'Group Captive & Open Access', 'desc' => 'Source clean solar electricity at tariffs substantially lower than DISCOM commercial rates.'],
-            ['title' => 'Scheduling & Forecasting (DSM)', 'desc' => 'Precise generation forecasting and deviation settlement management for grid stability.'],
-            ['title' => 'Regulatory & SLDC Liaison', 'desc' => 'Complete assistance with state load dispatch approvals and open access clearances.']
-        ]
-    ]
-];
+        'slug' => 'solar-rooftop-systems',
+        'short_description' => 'Turn your unused rooftop space into a reliable source of clean energy with customized solar solutions from AK ENERGIES.',
+        'tag_label' => 'RESIDENTIAL & COMMERCIAL',
+        'heading' => 'Customized Solar Rooftop Installations',
+        'long_description' => '<p>Turn your unused rooftop space into a reliable source of clean energy with customized solar solutions from AK ENERGIES. We design and install efficient rooftop systems for homes, businesses, industries, and institutions.</p>',
+        'card_image' => 'images/services/rooftop-solar-tn.jpg',
+        'detail_image1' => 'images/services/rooftop-solar-tn.jpg',
+        'detail_image2' => 'images/services/ro-1.jpg',
+    ];
+}
 
-// Determine selected service from query param, default to solar-rooftop-systems
-$service_key = isset($_GET['id']) && array_key_exists($_GET['id'], $services_data) ? $_GET['id'] : 'solar-rooftop-systems';
-$service = $services_data[$service_key];
+$all_services = get_active_services();
 
-$page_title = $service['title'] . " - AK Energies";
-$page_description = $service['intro'];
+$page_title = htmlspecialchars($service['title']) . " - AK Energies";
+$page_description = htmlspecialchars(strip_tags($service['short_description']));
 $current_page = "services";
 $extra_scripts = [
     'js/custom-swiper-1.js',
@@ -165,6 +39,10 @@ $extra_scripts = [
 ];
 require_once __DIR__ . '/includes/head.php';
 require_once __DIR__ . '/includes/header.php';
+
+$hero_img = get_image_url($service['card_image'], 'images/services/rooftop-solar-tn.jpg');
+$detail_img1 = !empty($service['detail_image1']) ? get_image_url($service['detail_image1']) : '';
+$detail_img2 = !empty($service['detail_image2']) ? get_image_url($service['detail_image2']) : '';
 ?>
 
 <!-- content begin -->
@@ -173,18 +51,18 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- Subheader Parallax Banner -->
     <section id="subheader" class="bg-dark text-light relative jarallax">
-        <img src="images/background/w2.webp" class="jarallax-img" alt="<?php echo htmlspecialchars($service['title']); ?>">
+        <img src="images/background/w2.webp" class="jarallax-img" alt="<?= htmlspecialchars($service['title']); ?>">
         <div class="container relative z-2">
             <div class="row gy-4 gx-5 align-items-center">
                 <div class="col-lg-12">
                     <div class="spacer-double sm-hide"></div>
-                    <h5 class="wow fadeInUp text-blue fw-600">Service <?php echo $service['num']; ?> — AK ENERGIES</h5>
-                    <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s"><?php echo htmlspecialchars($service['title']); ?></h1>
+                    <h5 class="wow fadeInUp text-blue fw-600"><?= !empty($service['tag_label']) ? htmlspecialchars($service['tag_label']) : 'SOLAR SERVICE'; ?> — AK ENERGIES</h5>
+                    <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s"><?= htmlspecialchars($service['title']); ?></h1>
                     <div class="border-bottom mb-3"></div>
                     <ul class="crumb wow fadeInUp">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="services.php">Services</a></li>
-                        <li class="active"><?php echo htmlspecialchars($service['title']); ?></li>
+                        <li class="active"><?= htmlspecialchars($service['title']); ?></li>
                     </ul>   
                 </div>
             </div>
@@ -204,20 +82,49 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- Main Service Hero Image -->
                     <div class="mb-4 rounded-1 overflow-hidden shadow-sm wow fadeInUp">
-                        <img src="<?php echo htmlspecialchars($service['image']); ?>" 
+                        <img src="<?= htmlspecialchars($hero_img); ?>" 
                              class="w-100" 
                              style="max-height: 460px; object-fit: cover; object-position: center; display: block;" 
-                             alt="<?php echo htmlspecialchars($service['alt']); ?>">
+                             alt="<?= htmlspecialchars($service['title']); ?>">
                     </div>
 
                     <!-- Intro Box -->
-                    <div class="mb-5 wow fadeInUp" data-wow-delay=".1s">
-                        <div class="subtitle id-color mb-2">Service Overview</div>
-                        <h2 class="text-dark mb-3"><?php echo htmlspecialchars($service['title']); ?></h2>
-                        <p class="fs-18 lh-1-7 text-dark fw-500">
-                            <?php echo htmlspecialchars($service['intro']); ?>
-                        </p>
+                    <div class="mb-4 wow fadeInUp" data-wow-delay=".1s">
+                        <?php if (!empty($service['tag_label'])): ?>
+                            <div class="subtitle id-color mb-2"><?= htmlspecialchars($service['tag_label']); ?></div>
+                        <?php endif; ?>
+                        
+                        <h2 class="text-dark mb-3"><?= !empty($service['heading']) ? htmlspecialchars($service['heading']) : htmlspecialchars($service['title']); ?></h2>
+                        
+                        <?php if (!empty($service['short_description'])): ?>
+                            <div class="fs-18 lh-1-7 text-dark fw-500 mb-4 p-3 bg-light rounded-1 border-start border-4 border-primary">
+                                <?= $service['short_description']; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
+
+                    <!-- Detail Images Strip if available -->
+                    <?php if ($detail_img1 || $detail_img2): ?>
+                        <div class="row g-3 mb-4 wow fadeInUp">
+                            <?php if ($detail_img1): ?>
+                                <div class="<?= $detail_img2 ? 'col-md-6' : 'col-12' ?>">
+                                    <img src="<?= htmlspecialchars($detail_img1) ?>" class="w-100 rounded-1 shadow-sm" style="height: 240px; object-fit: cover;" alt="Service visual 1">
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($detail_img2): ?>
+                                <div class="<?= $detail_img1 ? 'col-md-6' : 'col-12' ?>">
+                                    <img src="<?= htmlspecialchars($detail_img2) ?>" class="w-100 rounded-1 shadow-sm" style="height: 240px; object-fit: cover;" alt="Service visual 2">
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Long Description (Rich HTML Content) -->
+                    <?php if (!empty($service['long_description'])): ?>
+                        <div class="mb-5 wow fadeInUp service-long-description" data-wow-delay=".2s" style="line-height: 1.8; font-size: 16px; color: #334155;">
+                            <?= $service['long_description']; ?>
+                        </div>
+                    <?php endif; ?>
 
                     <!-- What We Provide Section -->
                     <div class="mb-5 wow fadeInUp" data-wow-delay=".2s">
@@ -225,45 +132,41 @@ require_once __DIR__ . '/includes/header.php';
                             <i class="fs-28 text-blue icon_box-checked me-2"></i>
                             <h3 class="mb-0 text-dark">What We Provide</h3>
                         </div>
-                        <p class="text-muted mb-4">Our specialized end-to-end scope of services for <?php echo htmlspecialchars($service['title']); ?> includes:</p>
+                        <p class="text-muted mb-4">Our specialized end-to-end scope of services for <?= htmlspecialchars($service['title']); ?> includes:</p>
                         
                         <div class="row g-3">
-                            <?php foreach ($service['what_we_provide'] as $idx => $item): ?>
-                                <div class="col-md-6">
-                                    <div class="p-3 bg-light rounded-1 border-gray h-100 d-flex align-items-center">
-                                        <div class="circle bg-color text-dark me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                                            <i class="fa fa-check fs-13"></i>
-                                        </div>
-                                        <span class="fw-600 text-dark fs-15"><?php echo htmlspecialchars($item); ?></span>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-1 border-gray h-100 d-flex align-items-center">
+                                    <div class="circle bg-color text-dark me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                        <i class="fa fa-check fs-13"></i>
                                     </div>
+                                    <span class="fw-600 text-dark fs-15">Customized Engineering & Planning</span>
                                 </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-
-                    <!-- Why Choose This Solution Section -->
-                    <div class="mb-5 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fs-28 text-blue icon_star me-2"></i>
-                            <h3 class="mb-0 text-dark">Why Choose This Solution</h3>
-                        </div>
-                        
-                        <div class="p-4 bg-light rounded-1 border-start border-4 border-primary shadow-sm mb-4">
-                            <p class="fs-17 text-dark mb-0 fw-500 lh-1-6">
-                                <?php echo htmlspecialchars($service['why_choose']); ?>
-                            </p>
-                        </div>
-
-                        <!-- Key Benefits Cards -->
-                        <div class="row g-3">
-                            <?php foreach ($service['benefits'] as $b): ?>
-                                <div class="col-md-4">
-                                    <div class="p-3 bg-white border-gray rounded-1 h-100 shadow-sm">
-                                        <h5 class="text-blue fs-16 mb-2 fw-700"><?php echo htmlspecialchars($b['title']); ?></h5>
-                                        <p class="fs-13 text-muted mb-0"><?php echo htmlspecialchars($b['desc']); ?></p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-1 border-gray h-100 d-flex align-items-center">
+                                    <div class="circle bg-color text-dark me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                        <i class="fa fa-check fs-13"></i>
                                     </div>
+                                    <span class="fw-600 text-dark fs-15">Tier-1 Components & Modules</span>
                                 </div>
-                            <?php endforeach; ?>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-1 border-gray h-100 d-flex align-items-center">
+                                    <div class="circle bg-color text-dark me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                        <i class="fa fa-check fs-13"></i>
+                                    </div>
+                                    <span class="fw-600 text-dark fs-15">Grid Integration & Approvals</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-1 border-gray h-100 d-flex align-items-center">
+                                    <div class="circle bg-color text-dark me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                        <i class="fa fa-check fs-13"></i>
+                                    </div>
+                                    <span class="fw-600 text-dark fs-15">Complete Testing & Commissioning</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -277,7 +180,7 @@ require_once __DIR__ . '/includes/header.php';
                                 <div class="p-3 bg-light rounded-1 text-center h-100 border-gray">
                                     <span class="fs-24 fw-800 text-blue d-block mb-1">01</span>
                                     <h6 class="fw-bold text-dark mb-1">Consultation</h6>
-                                    <p class="fs-12 text-muted mb-0">Initial assessment & energy requirement study</p>
+                                    <p class="fs-12 text-muted mb-0">Initial site & energy load assessment</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
@@ -314,20 +217,22 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="p-4 bg-light rounded-1 border-gray mb-4 shadow-sm wow fadeInUp">
                             <h4 class="text-dark mb-3 pb-2 border-bottom">All Services</h4>
                             <ul class="list-unstyled mb-0">
-                                <?php foreach ($services_data as $s_id => $s_item): 
-                                    $is_active = ($s_id === $service_key);
+                                <?php if (!empty($all_services)): 
+                                    $cnt = 1;
+                                    foreach ($all_services as $s_item): 
+                                        $is_active = ($s_item['slug'] === $service['slug'] || $s_item['id'] == $service['id']);
                                 ?>
                                     <li class="mb-2">
-                                        <a href="service-single.php?id=<?php echo urlencode($s_id); ?>" 
-                                           class="d-flex align-items-center justify-content-between p-3 rounded-1 text-decoration-none transition-all <?php echo $is_active ? 'bg-color text-dark fw-bold shadow-sm' : 'bg-white text-dark hover-bg-light border-gray'; ?>">
+                                        <a href="service-single.php?id=<?= urlencode($s_item['slug']); ?>" 
+                                           class="d-flex align-items-center justify-content-between p-3 rounded-1 text-decoration-none transition-all <?= $is_active ? 'bg-color text-dark fw-bold shadow-sm' : 'bg-white text-dark hover-bg-light border-gray'; ?>">
                                             <span class="fs-14">
-                                                <span class="op-6 me-2"><?php echo $s_item['num']; ?>.</span>
-                                                <?php echo htmlspecialchars($s_item['title']); ?>
+                                                <span class="op-6 me-2"><?= sprintf("%02d", $cnt++); ?>.</span>
+                                                <?= htmlspecialchars($s_item['title']); ?>
                                             </span>
-                                            <i class="fa fa-angle-right <?php echo $is_active ? 'text-dark' : 'text-blue'; ?>"></i>
+                                            <i class="fa fa-angle-right <?= $is_active ? 'text-dark' : 'text-blue'; ?>"></i>
                                         </a>
                                     </li>
-                                <?php endforeach; ?>
+                                <?php endforeach; endif; ?>
                             </ul>
                         </div>
 

@@ -31,12 +31,12 @@
             <div class="widget">
               <h5>Our Services</h5>
               <ul>
-                <li><a href="services.php">Solar Rooftop Systems</a></li>
-                <li><a href="services.php">Solar EPC Utility Grid Projects</a></li>
-                <li><a href="services.php">Solar Farms Solutions</a></li>
-                <li><a href="services.php">Energy Auditing</a></li>
-                <li><a href="services.php">Solar Lighting Solutions</a></li>
-                <li><a href="services.php">Power Trading</a></li>
+                <li><a href="service-single.php?id=solar-rooftop-systems">Solar Rooftop Systems</a></li>
+                <li><a href="service-single.php?id=solar-epc-utility-grid">Solar EPC Utility Grid Projects</a></li>
+                <li><a href="service-single.php?id=solar-farms-solutions">Solar Farms Solutions</a></li>
+                <li><a href="service-single.php?id=energy-auditing">Energy Auditing</a></li>
+                <li><a href="service-single.php?id=solar-lighting-solutions">Solar Lighting Solutions</a></li>
+                <li><a href="service-single.php?id=power-trading">Power Trading</a></li>
               </ul>
             </div>
           </div>
