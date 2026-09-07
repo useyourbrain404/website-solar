@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/db.php';
+require_once __DIR__ . '/includes/mail.php';
 
 // Handle form submission when requested via POST
 if (($_SERVER["REQUEST_METHOD"] ?? '') === "POST") {
@@ -17,12 +18,8 @@ if (($_SERVER["REQUEST_METHOD"] ?? '') === "POST") {
     // Save inquiry to MySQL database
     save_enquiry($name, $email, $phone, 'General Quote', $message);
 
-    // Optional mail notification
-    $recipient = "support@akenergies.com";
-    $subject = "New Contact Form Submission from " . $name;
-    $email_content = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message\n";
-    $email_headers = "From: $name <$email>";
-    @mail($recipient, $subject, $email_content, $email_headers);
+    // Send email notification via PHPMailer
+    send_contact_email($name, $email, $phone, $message);
 
     http_response_code(200);
     echo "sent";
@@ -33,7 +30,7 @@ $page_title = "Contact Us - AK Energies";
 $page_description = "Get in touch with our solar energy specialists for consultation and quotes.";
 $current_page = "contact";
 $extra_scripts = [
-    'js/validation-contact.js'
+    'js/validation-contact.js?v=2'
 ];
 require_once __DIR__ . '/includes/head.php';
 require_once __DIR__ . '/includes/header.php';
@@ -102,6 +99,16 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-lg-6">
                             <div class="p-40 bg-light rounded-1">
                                 <h3>Get In Touch</h3>
+
+                                <?php if (isset($_GET['sent'])): ?>
+                                    <div class="alert alert-success d-flex align-items-center mb-4" id="refresh_success" style="background:#67812F; color:#ffffff; border:none; padding:15px 18px; border-radius:8px; font-size:14.5px;">
+                                        <i class="icofont-check-circled me-2" style="font-size:22px; flex-shrink:0;"></i>
+                                        <div>
+                                            <strong>Thank You!</strong> Your message has been sent successfully. Our team will contact you shortly.
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+
                                 <form name="contactForm" id="contact_form" class="position-relative z1000" method="post" action="contact.php">
                                     <div class="row gx-4">
                                         <div class="col-lg-12 col-md-6 mb10">
@@ -134,11 +141,11 @@ require_once __DIR__ . '/includes/header.php';
                                         <input type='submit' id='send_message' value='Send Message' class="btn-main">
                                     </div>
 
-                                    <div id="success_message" class='success text-light'>
-                                        Your message has been sent successfully. Refresh this page if you want to send more messages.
+                                    <div id="success_message" class='success text-light' style="display:none; padding:15px 18px; border-radius:8px; background:#67812F; font-size:14.5px; margin-top:15px;">
+                                        <i class="icofont-check-circled me-2"></i> <strong>Thank You!</strong> Your message has been sent successfully. Refreshing...
                                     </div>
-                                    <div id="error_message" class='error'>
-                                        Sorry there was an error sending your form.
+                                    <div id="error_message" class='error' style="display:none; padding:14px 18px; border-radius:8px; background:#dc2626; color:#ffffff; font-size:14px; margin-top:15px;">
+                                        Sorry, there was an error sending your message. Please try again.
                                     </div>
                                 </form>
                             </div>

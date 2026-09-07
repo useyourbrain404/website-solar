@@ -48,17 +48,41 @@ $(document).ready(function() {
             
             $.post("contact.php", $("#contact_form").serialize(), function(result) {
                 if (result == 'sent' || result.indexOf('success') !== -1 || result.indexOf('ok') !== -1 || result.indexOf('sent') !== -1) {
-                    $('#submit').remove();
-                    $('#success_message').fadeIn(500);
+                    $('#contact_form')[0].reset();
+                    $('#submit').hide();
+                    $('#error_message').hide();
+                    $('#success_message').fadeIn(400);
+
+                    // Automatic refresh after 2 seconds
+                    setTimeout(function() {
+                        window.location.href = "contact.php?sent=1";
+                    }, 2000);
                 } else {
                     $('#error_message').fadeIn(500);
                     $('#send_message').removeAttr('disabled').attr('value', 'Send Message');
                 }
             }).fail(function() {
-                // Fallback for static servers
-                $('#submit').remove();
-                $('#success_message').fadeIn(500);
+                $('#contact_form')[0].reset();
+                $('#submit').hide();
+                $('#error_message').hide();
+                $('#success_message').fadeIn(400);
+
+                setTimeout(function() {
+                    window.location.href = "contact.php?sent=1";
+                }, 2000);
             });
         }
     });
+
+    // Smooth scroll to Thank You alert if page just refreshed
+    if (window.location.search.indexOf('sent=1') !== -1) {
+        if ($('#refresh_success').length) {
+            $('html, body').animate({
+                scrollTop: $('#refresh_success').offset().top - 140
+            }, 500);
+            setTimeout(function() {
+                $('#refresh_success').fadeOut(800);
+            }, 9000);
+        }
+    }
 });
