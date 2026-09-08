@@ -1,4 +1,4 @@
-<section class="text-light no-top no-bottom relative overflow-hidden">
+<section class="text-light no-top no-bottom relative overflow-hidden slider-hero-section">
     <div class="v-center">
         <div class="swiper">
             <!-- Additional required wrapper -->

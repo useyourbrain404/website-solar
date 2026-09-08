@@ -42,11 +42,11 @@ if (!isset($page_description)) {
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
     <link href="css/plugins.css" rel="stylesheet" type="text/css">
     <link href="css/swiper.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css?v=2.1" rel="stylesheet" type="text/css">
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
     <link href="css/custom-swiper-1.css" rel="stylesheet" type="text/css">
-    <link href="css/usability.css" rel="stylesheet" type="text/css">
+    <link href="css/usability.css?v=2.1" rel="stylesheet" type="text/css">
 
 </head>
 

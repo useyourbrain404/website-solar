@@ -16,7 +16,7 @@ if (!isset($current_page)) {
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="index.php" title="AK Energies Home">
-                                        <img class="logo-main" src="images/logo-white.webp" alt="AK Energies - Solar & Renewable Energy">
+                                        <img class="logo-main" src="images/logo.png" alt="AK Energies - Solar & Renewable Energy">
                                     </a>
                                 </div>
                                 <!-- logo end -->

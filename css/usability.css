@@ -511,8 +511,10 @@ header .btn-header-quote:active {
         width: 175px !important;
         height: 64px !important;
         padding: 0 24px 0 12px !important;
+        background: #FFFFFF !important;
         clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%) !important;
         -webkit-clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%) !important;
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08) !important;
     }
 
     header div#logo img.logo-main,
@@ -548,7 +550,12 @@ header .btn-header-quote:active {
 @media (max-width: 380px) {
     header div#logo {
         width: 148px !important;
+        height: 64px !important;
         padding: 0 18px 0 8px !important;
+        background: #FFFFFF !important;
+        clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%) !important;
+        -webkit-clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%) !important;
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08) !important;
     }
 
     header div#logo img.logo-main,
@@ -583,7 +590,12 @@ header .btn-header-quote:active {
 @media (max-width: 360px) {
     header div#logo {
         width: 135px !important;
+        height: 64px !important;
         padding: 0 14px 0 6px !important;
+        background: #FFFFFF !important;
+        clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%) !important;
+        -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%) !important;
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08) !important;
     }
 
     header div#logo img.logo-main,
@@ -614,7 +626,21 @@ header .btn-header-quote:active {
 /* --------------------------------------------------------------------------
    5. Hero Slider Responsive Optimization, Framing & Mobile CTA Visibility
    -------------------------------------------------------------------------- */
-/* Global slider image centering and framing ("IMAGE ALL SHOW") */
+/* Global slider image centering, framing & full-page viewport height */
+section.slider-hero-section,
+.slider-hero-section {
+    position: relative !important;
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    background: #0A1128 !important;
+}
+
 .swiper-inner,
 .swiper-inner.bgcustom,
 div[data-bgimage] {
@@ -626,11 +652,15 @@ div[data-bgimage] {
 /* Tablet screens (768px - 991px) */
 @media (max-width: 991px) {
     .v-center {
-        min-height: calc(100vh - 75px) !important;
-        min-height: calc(100dvh - 75px) !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        background: #0A1128 !important;
     }
     .swiper-inner {
-        min-height: 520px !important;
+        min-height: 100% !important;
+        height: 100% !important;
         background-position: center center !important;
     }
     .sw-caption {
@@ -659,15 +689,16 @@ div[data-bgimage] {
 /* Mobile screens (< 768px) */
 @media (max-width: 767px) {
     .v-center {
-        min-height: calc(100vh - 68px) !important;
-        min-height: calc(100dvh - 68px) !important;
-        height: calc(100vh - 68px) !important;
-        height: calc(100dvh - 68px) !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        height: 100vh !important;
+        height: 100dvh !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         position: relative !important;
         overflow: hidden !important;
+        background: #0A1128 !important;
     }
 
     .swiper {
@@ -723,7 +754,7 @@ div[data-bgimage] {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        padding: 70px 18px 24px !important;
+        padding: 85px 18px 24px !important;
         box-sizing: border-box !important;
         z-index: 5 !important;
     }

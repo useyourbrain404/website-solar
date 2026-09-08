@@ -5962,9 +5962,12 @@ h4.de-timeline-year {
 .v-center {
   min-height: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #0A1128 !important;
 }
 
 
@@ -15214,6 +15217,8 @@ header.smaller #btn-extra span {
     padding: 0 32px 0 14px !important;
     clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%) !important;
     -webkit-clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%) !important;
+    background: #FFFFFF !important;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1) !important;
   }
 
   header div#logo img.logo-main,
@@ -15221,6 +15226,10 @@ header.smaller #btn-extra span {
     max-width: 185px !important;
     /* 170-180px range */
     max-height: 52px !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 
   .header-col-mid {
