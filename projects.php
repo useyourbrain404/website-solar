@@ -55,7 +55,7 @@ $projects = get_active_projects();
                         <a href="<?= htmlspecialchars($link) ?>">
                             <div class="hover rounded-1 relative overflow-hidden text-light">
                                 <div class="abs p-40 top-0 z-3">
-                                    <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn" alt="">
+                                    <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn" alt="" aria-hidden="true">
                                 </div>
                                 <div class="abs p-40 bottom-0 z-3">
                                     <h3><?= htmlspecialchars($p['title']) ?></h3>
@@ -92,6 +92,9 @@ $projects = get_active_projects();
                     <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
                         <a href="contact.php" class="btn-main fx-slide">
                             <span>START YOUR PROJECT</span>
+                        </a>
+                        <a href="https://wa.me/1800987654?text=Hi%20AK%20Energies%2C%20I%20have%20a%20solar%20project%20in%20mind" target="_blank" rel="noopener noreferrer" class="btn-main btn-line fx-slide hover-white">
+                            <span><i class="fa-brands fa-whatsapp me-1 text-success"></i> DISCUSS ON WHATSAPP</span>
                         </a>
                     </div>
                 </div>

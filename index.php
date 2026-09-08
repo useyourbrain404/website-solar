@@ -21,25 +21,23 @@ $home_projects = get_active_projects(6);
 
     <?php require_once __DIR__ . '/includes/slider.php'; ?>
 
-    <section>
+    <section class="about-feature-section">
         <div class="container">
-            <div class="row g-4 align-items-center">
+            <div class="row gy-4 gx-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="relative">
-                        <div class="abs bottom-0 end-0">
-                            <div class="p-4 mb-4 bg-color text-white rounded-1 text-center wow fadeInUp"
-                                data-wow-delay=".0s">
-                                <h1 class="fs-48 fw-bold mb-1 text-white">5+</h1>
-                                <div class="fs-15 fw-600 lh-1-5 text-white">Years of Experience</div>
-                            </div>
+                    <div class="about-feature-images relative">
+                        <div
+                            class="about-clean-card bg-dark text-light text-center rounded-1 abs w-200px p-4 m-4 bottom-0 z-3 overflow-hidden wow zoomIn">
+                            <h2 class="mb-0">100%</h2>
+                            <p class="lh-1-5">Committed to Clean Energy</p>
                         </div>
-                        <div class="abs w-80">
-                            <img src="images/misc/main-1.jpg" class="w-70 rounded-1 overflow-hidden"
-                                alt="AK ENERGIES Solar Installation">
+                        <div class="about-back-img rounded-1 w-90 overflow-hidden wow zoomIn">
+                            <img src="images/misc/about-back-image.jpg" class="w-100 wow scaleIn" alt="AK Energies Clean Energy">
                         </div>
-                        <div class="mb-4 d-inline-block p-30 mb-4 mt-4 text-end">
-                            <img src="images/misc/L-pro-4.jpg" class="w-80 rounded-1 overflow-hidden"
-                                alt="AK ENERGIES Solar Panels">
+                        <div class="about-front-img rounded-1 w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn"
+                            data-wow-delay=".2s">
+                            <img src="images/misc/about-font-image.jpg" class="w-100 wow scaleIn" data-wow-delay=".2s"
+                                alt="AK Energies Solar Solutions">
                         </div>
                     </div>
                 </div>
@@ -86,6 +84,8 @@ $home_projects = get_active_projects(6);
                 </div>
             </div>
         </div>
+
+        <div class="spacer-double"></div>
     </section>
 
     <section class="bg-light">
@@ -124,8 +124,8 @@ $home_projects = get_active_projects(6);
                                 </a>
                                 <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm" style="min-height: 200px;">
                                     <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                        <a href="<?= htmlspecialchars($hs_link) ?>">
-                                            <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
+                                        <a href="<?= htmlspecialchars($hs_link) ?>" aria-label="Learn more about <?= htmlspecialchars($hs['title']) ?>">
+                                            <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="" aria-hidden="true">
                                         </a>
                                     </div>
                                     <h4><a href="<?= htmlspecialchars($hs_link) ?>" class="text-dark text-decoration-none"><?= htmlspecialchars($hs['title']) ?></a></h4>
@@ -145,22 +145,22 @@ $home_projects = get_active_projects(6);
         </div>
     </section>
 
-    <section class="bg-dark text-light">
+    <section class="bg-dark text-light about-feature-section">
         <div class="container relative z-1">
             <div class="row g-4 gx-5 align-items-center">
 
                 <div class="col-lg-6">
-                    <div class="relative">
+                    <div class="about-feature-images relative">
                         <div
-                            class="bg-blur text-light text-center rounded-1 abs w-200px p-4 m-4 bottom-0 z-3 overflow-hidden wow zoomIn">
-                            <h2 class="mb-0">100%</h2>
-                            <p class="lh-1-5">Committed to Clean Energy</p>
+                            class="about-clean-card bg-blur text-light text-center rounded-1 abs w-200px p-4 m-4 bottom-0 z-3 overflow-hidden wow zoomIn">
+                            <h2 class="mb-0 text-white">25+</h2>
+                            <p class="lh-1-5 mb-0">Years Solar Warranty</p>
                         </div>
-                        <div class="rounded-1 w-90 overflow-hidden wow zoomIn">
+                        <div class="about-back-img rounded-1 w-90 overflow-hidden wow zoomIn">
                             <img src="images/services/reo1.jpg" class="w-100 wow scaleIn"
                                 alt="AK ENERGIES Solar Projects">
                         </div>
-                        <div class="rounded-1 w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn"
+                        <div class="about-front-img rounded-1 w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn"
                             data-wow-delay=".2s">
                             <img src="images/services/sero.jpg" class="w-100 wow scaleIn" data-wow-delay=".2s"
                                 alt="AK ENERGIES Solar Performance">
@@ -312,7 +312,7 @@ $home_projects = get_active_projects(6);
                                                 <div class="hover rounded-1 relative overflow-hidden text-light">
                                                     <div class="abs p-40 top-0 z-3">
                                                         <img src="images/misc/up-right-arrow-white.webp"
-                                                            class="w-10 mb-3 wow scaleIn" alt="">
+                                                            class="w-10 mb-3 wow scaleIn" alt="" aria-hidden="true">
                                                     </div>
                                                     <div class="abs p-40 bottom-0 z-3">
                                                         <h3><?= htmlspecialchars($hp['title']) ?></h3>
@@ -665,35 +665,39 @@ $home_projects = get_active_projects(6);
 
                 <div class="col-lg-12">
                     <div class="relative">
-                        <div class="row g-4 grid-divider sm-hide">
+                        <div class="row g-4">
                             <div class="col-lg-4 col-md-6 mb-sm-30 wow fadeIn fadeInRight" data-wow-delay=".2s">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <i class="fs-36 text-blue icon_phone"></i>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold text-white">Need Our Services?</h5>
-                                        <p class="text-white mb-0 fs-14 op-9">Call: +1 800 987 654</p>
+                                <a href="tel:+1800987654" class="text-decoration-none d-block">
+                                    <div class="d-flex justify-content-center align-items-center p-3 rounded-1" style="background: rgba(255,255,255,0.06);">
+                                        <i class="fs-36 text-white icon_phone"></i>
+                                        <div class="ms-3">
+                                            <h5 class="mb-0 fw-bold text-white">Need Our Services?</h5>
+                                            <span class="text-white fs-14 op-9">Call: <strong>+1 800 987 654</strong></span>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
 
                             <div class="col-lg-4 col-md-6 mb-sm-30 wow fadeIn fadeInRight" data-wow-delay=".4s">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <i class="fs-36 text-blue icon_clock"></i>
+                                <div class="d-flex justify-content-center align-items-center p-3 rounded-1" style="background: rgba(255,255,255,0.06);">
+                                    <i class="fs-36 text-white icon_clock"></i>
                                     <div class="ms-3">
                                         <h5 class="mb-0 fw-bold text-white">Work Hours</h5>
-                                        <p class="text-white mb-0 fs-14 op-9">Mon to Sat 08:00 - 17:00</p>
+                                        <span class="text-white fs-14 op-9">Mon to Sat 08:00 - 18:00</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 mb-sm-30 wow fadeIn fadeInRight" data-wow-delay=".6s">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <i class="fs-36 text-blue icon_mail"></i>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold text-white">Email Us</h5>
-                                        <p class="text-white mb-0 fs-14 op-9">support@akenergies.com</p>
+                                <a href="mailto:support@akenergies.com" class="text-decoration-none d-block">
+                                    <div class="d-flex justify-content-center align-items-center p-3 rounded-1" style="background: rgba(255,255,255,0.06);">
+                                        <i class="fs-36 text-white icon_mail"></i>
+                                        <div class="ms-3">
+                                            <h5 class="mb-0 fw-bold text-white">Email Us</h5>
+                                            <span class="text-white fs-14 op-9"><strong>support@akenergies.com</strong></span>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
 
                         </div>

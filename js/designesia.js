@@ -349,6 +349,10 @@
            margin:30,
            nav:false,
            dots:false,
+           autoplay:true,
+           autoplayTimeout:3500,
+           smartSpeed:800,
+           autoplayHoverPause:true,
            responsive:{
                1000:{
                    items:3
@@ -1323,18 +1327,18 @@
              $(this).data('iteration', iteration);
          });
 
-         jQuery('#extra-content').addClass('wow');
+         // Removed .wow class to prevent permanent visibility:hidden bug in off-canvas drawer
+         jQuery('#extra-content').removeClass('wow').css({'visibility': 'visible', 'opacity': '1'});
 
          jQuery("#btn-extra, #btn-cart").on("click", function() {
-            jQuery('#extra-wrap').addClass('open');
+            jQuery('#extra-wrap, #extra-overlay').addClass('open');
             //jQuery('body').addClass('no-scroll');
-            jQuery('#extra-content').addClass('fadeInRight');
+            jQuery('#extra-content').removeClass('wow').css({'visibility': 'visible', 'opacity': '1'});
          });
 
-         jQuery("#btn-close").on("click", function() {
-            jQuery('#extra-wrap').removeClass('open');
+         jQuery("#btn-close, #extra-overlay").on("click", function() {
+            jQuery('#extra-wrap, #extra-overlay').removeClass('open');
             //jQuery('body').removeClass('no-scroll');
-            jQuery('#extra-content').removeClass('fadeInRight');
          });
          
      }
@@ -1687,13 +1691,19 @@
                  $nav.find(".btn-next").off("click").on("click", function (e) {
                      e.preventDefault();
                      owl.trigger('next.owl.carousel');
-                     owl.trigger('play.owl.autoplay', [4000]);
+                     owl.trigger('play.owl.autoplay', [3500]);
                  });
                  $nav.find(".btn-prev").off("click").on("click", function (e) {
                      e.preventDefault();
                      owl.trigger('prev.owl.carousel');
-                     owl.trigger('play.owl.autoplay', [4000]);
+                     owl.trigger('play.owl.autoplay', [3500]);
                  });
+
+                 // Ensure autoplay continues after mobile swipe/touch
+                 owl.off('dragged.owl.carousel.autoplay translated.owl.carousel.autoplay')
+                    .on('dragged.owl.carousel.autoplay translated.owl.carousel.autoplay', function () {
+                        owl.trigger('play.owl.autoplay', [3500]);
+                    });
              });
             }
             owlnavcenter();
@@ -1778,25 +1788,8 @@
            return $state;
          };
 
-         // --------------------------------------------------
-         // navigation for mobile
-         // --------------------------------------------------
-         jQuery('#menu-btn, #mainmenu a').on("click", function() {
-
-            var h = jQuery('header')[0].scrollHeight;
-			
-             if (mobile_menu_show === 0) {
-                 jQuery('header').addClass('menu-open');
-                 jQuery('header').css('height',$(window).innerHeight());
-                 mobile_menu_show = 1;
-                 jQuery('#menu-btn').addClass("menu-open");
-             } else {
-                jQuery('header').removeClass('menu-open');
-                jQuery('header').css('height','auto');
-                 mobile_menu_show = 0;
-                 jQuery('#menu-btn').removeClass("menu-open");
-             }
-         })
+         // Mobile navigation handled by usability.js
+         // Handled cleanly with smooth overlay & escape key support
          jQuery("a.btn").on("click", function(evn) {
              if (this.href.indexOf('#') === -1) {
                  evn.preventDefault();

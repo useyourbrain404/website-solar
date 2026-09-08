@@ -16,7 +16,7 @@ if (!isset($sub_bg_image)) {
 }
 ?>
             <section id="subheader" class="bg-dark text-light relative jarallax">
-                <img src="<?php echo htmlspecialchars($sub_bg_image); ?>" class="jarallax-img" alt="">
+                <img src="<?php echo htmlspecialchars($sub_bg_image); ?>" class="jarallax-img" alt="" aria-hidden="true" role="presentation">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">

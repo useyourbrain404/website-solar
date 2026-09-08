@@ -576,7 +576,7 @@ header .header-col.mid .social-icons {
 #subheader h5 {
   font-size: 14px;
   font-weight: 600;
-  color: var(--primary-color);
+  color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -14913,27 +14913,30 @@ header.header-s1 {
   width: 100% !important;
   height: 85px !important;
   min-height: 85px !important;
-  background: rgba(10, 17, 40, 0.25) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  backdrop-filter: blur(12px) !important;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   z-index: 1001 !important;
   margin: 0 !important;
   padding: 0 !important;
   display: flex !important;
   align-items: center !important;
-  transition: background 0.35s ease, box-shadow 0.35s ease, height 0.35s ease, border-color 0.35s ease !important;
+  transition: background 0.35s ease, box-shadow 0.35s ease, height 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease !important;
 }
 
 header.smaller,
 header.scroll-light,
 header.sticky,
-header.scrollOn {
-  background: var(--header-bg) !important;
+header.scrollOn,
+header.ak-header-scrolled {
+  background: #67813F !important;
+  background: rgba(103, 129, 63, 0.98) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   backdrop-filter: blur(12px) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
-  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
   height: 85px !important;
   min-height: 85px !important;
 }

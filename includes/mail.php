@@ -51,6 +51,7 @@ function send_email($toEmail, $toName, $subject, $htmlBody, $replyToEmail = '', 
         $mail->SMTPSecure = SMTP_SECURE;
         $mail->Port       = SMTP_PORT;
         $mail->CharSet    = 'UTF-8';
+        $mail->Timeout    = 10;
 
         // Sender & Recipient
         $mail->setFrom(MAIL_FROM_EMAIL, MAIL_FROM_NAME);
@@ -93,12 +94,13 @@ function send_email($toEmail, $toName, $subject, $htmlBody, $replyToEmail = '', 
  * @param string $message
  * @return bool
  */
-function send_contact_email($name, $email, $phone, $message) {
-    $subject = "New Contact Enquiry from " . $name . " · AK Energies";
+function send_contact_email($name, $email, $phone, $message, $service = 'General Consultation') {
+    $subject = "New Inquiry: [" . $service . "] from " . $name . " · AK Energies";
 
     $safeName    = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
     $safeEmail   = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
     $safePhone   = htmlspecialchars($phone ?: 'Not provided', ENT_QUOTES, 'UTF-8');
+    $safeService = htmlspecialchars($service ?: 'General Consultation', ENT_QUOTES, 'UTF-8');
     $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
     $date        = date('d M Y, h:i A');
 
@@ -119,8 +121,12 @@ function send_contact_email($name, $email, $phone, $message) {
             
             <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:22px;">
                 <tr style="border-bottom:1px solid #f1f5f9;">
-                    <td style="padding:10px 0; font-weight:600; color:#64748b; width:100px;">Name:</td>
+                    <td style="padding:10px 0; font-weight:600; color:#64748b; width:120px;">Name:</td>
                     <td style="padding:10px 0; color:#0F2647; font-weight:600;">{$safeName}</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f1f5f9;">
+                    <td style="padding:10px 0; font-weight:600; color:#64748b;">Service:</td>
+                    <td style="padding:10px 0; color:#67812F; font-weight:700;">{$safeService}</td>
                 </tr>
                 <tr style="border-bottom:1px solid #f1f5f9;">
                     <td style="padding:10px 0; font-weight:600; color:#64748b;">Email:</td>

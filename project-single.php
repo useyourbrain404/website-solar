@@ -63,7 +63,7 @@ $hero_img = get_image_url($project['card_image'], 'images/projects/1.webp');
             <div class="row gy-4 gx-5 align-items-center">
                 <div class="col-lg-12">
                     <div class="spacer-double sm-hide"></div>
-                    <h2 class="mb-3 wow fadeInUp" data-wow-delay=".2s"><?= htmlspecialchars($project['title']); ?></h2>
+                    <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s"><?= htmlspecialchars($project['title']); ?></h1>
                     <div class="border-bottom mb-3"></div>
                     <ul class="crumb wow fadeInUp">
                         <li><a href="index.php">Home</a></li>
@@ -159,9 +159,12 @@ $hero_img = get_image_url($project['card_image'], 'images/projects/1.webp');
                 </div>
             <?php endif; ?>
 
-            <div class="text-center mt-5">
-                <a href="projects.php" class="btn-main btn-line fx-slide me-3"><span>&larr; BACK TO ALL PROJECTS</span></a>
-                <a href="contact.php" class="btn-main fx-slide"><span>REQUEST SIMILAR INSTALLATION</span></a>
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="projects.php" class="btn-main btn-line fx-slide"><span>&larr; ALL PROJECTS</span></a>
+                <a href="contact.php?service=<?= urlencode($project['title']); ?>" class="btn-main fx-slide"><span>REQUEST SIMILAR INSTALLATION</span></a>
+                <a href="https://wa.me/1800987654?text=Hi%20AK%20Energies%2C%20I%20saw%20your%20project%20<?= urlencode($project['title']); ?>%20and%20want%20a%20similar%20installation" target="_blank" rel="noopener noreferrer" class="btn-main btn-line fx-slide hover-white">
+                    <span><i class="fa-brands fa-whatsapp me-1 text-success"></i> CHAT ON WHATSAPP</span>
+                </a>
             </div>
 
         </div>

@@ -35,20 +35,20 @@ require_once __DIR__ . '/includes/header.php';
         <div class="sw-overlay"></div>
     </section>
 
-    <section>
+    <section class="about-feature-section">
         <div class="container">
             <div class="row gy-4 gx-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="relative">
+                    <div class="about-feature-images relative">
                         <div
-                            class="bg-dark text-light text-center rounded-1 abs w-200px p-4 m-4 bottom-0 z-3 overflow-hidden wow zoomIn">
+                            class="about-clean-card bg-dark text-light text-center rounded-1 abs w-200px p-4 m-4 bottom-0 z-3 overflow-hidden wow zoomIn">
                             <h2 class="mb-0">100%</h2>
                             <p class="lh-1-5">Committed to Clean Energy</p>
                         </div>
-                        <div class="rounded-1 w-90 overflow-hidden wow zoomIn">
+                        <div class="about-back-img rounded-1 w-90 overflow-hidden wow zoomIn">
                             <img src="images/misc/about-back-image.jpg" class="w-100 wow scaleIn" alt="">
                         </div>
-                        <div class="rounded-1 w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn"
+                        <div class="about-front-img rounded-1 w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn"
                             data-wow-delay=".2s">
                             <img src="images/misc/about-font-image.jpg" class="w-100 wow scaleIn" data-wow-delay=".2s"
                                 alt="">

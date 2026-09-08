@@ -258,8 +258,11 @@ $detail_img2 = !empty($service['detail_image2']) ? get_image_url($service['detai
                                 </div>
                             </div>
 
-                            <a href="contact.php" class="btn-main w-100 text-center fx-slide">
-                                <span>GET A FREE QUOTE</span>
+                            <a href="contact.php?service=<?= urlencode($service['slug']); ?>" class="btn-main w-100 text-center fx-slide">
+                                <span>REQUEST QUOTE FOR THIS SERVICE</span>
+                            </a>
+                            <a href="https://wa.me/1800987654?text=Hi%20AK%20Energies%2C%20I%20am%20interested%20in%20<?= urlencode($service['title']); ?>" target="_blank" rel="noopener noreferrer" class="btn-main btn-line fx-slide w-100 text-center mt-2 hover-white" style="border-color: rgba(255,255,255,0.2);">
+                                <span><i class="fa-brands fa-whatsapp me-1 text-success"></i> WhatsApp Inquiry</span>
                             </a>
                         </div>
 

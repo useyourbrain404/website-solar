@@ -11,6 +11,7 @@ if (!isset($extra_scripts)) {
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
     <script src="js/swiper.js"></script>
+    <script src="js/usability.js"></script>
 <?php foreach ($extra_scripts as $script): ?>
     <script src="<?php echo htmlspecialchars($script); ?>"></script>
 <?php endforeach; ?>

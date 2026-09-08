@@ -1,14 +1,14 @@
 * {
-  --primary-color: #67812F;
-  --primary-color-rgb: 103, 129, 47;
+  --primary-color: #67813F;
+  --primary-color-rgb: 103, 129, 63;
   --primary-dark: #4F6823;
   --accent-color: #FBEC6B;
   --text-dark: #1F1F1F;
   --text-light: #FFFFFF;
   --border-color: rgba(255, 255, 255, 0.06);
-  --header-bg: rgb(103 129 47 / 96%);
+  --header-bg: #67813F;
   --bg-dark-1: #163563;
   --bg-dark-2: #0f2647;
-  --bg-dark-3: #1e1e1e;  
+  --bg-dark-3: #1e1e1e;
   --bg-dark-1-rgb: 22, 53, 99;
 }

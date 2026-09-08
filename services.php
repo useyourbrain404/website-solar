@@ -67,8 +67,8 @@ $services = get_active_services();
                                         </a>
                                         <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100 shadow-sm" style="min-height: 200px;">
                                             <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                                <a href="<?= htmlspecialchars($link) ?>">
-                                                    <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="">
+                                                <a href="<?= htmlspecialchars($link) ?>" aria-label="Learn more about <?= htmlspecialchars($s['title']) ?>">
+                                                    <img src="images/misc/up-right-arrow-white.webp" class="w-60px p-20" alt="" aria-hidden="true">
                                                 </a>
                                             </div>
                                             <h4><a href="<?= htmlspecialchars($link) ?>" class="text-dark text-decoration-none"><?= htmlspecialchars($s['title']) ?></a></h4>
@@ -102,10 +102,10 @@ $services = get_active_services();
                         <div class="col-lg-5 text-lg-end wow fadeInUp" data-wow-delay=".4s">
                             <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
                                 <a href="contact.php" class="btn-main fx-slide">
-                                    <span>GET A QUOTE</span>
+                                    <span>GET A FREE QUOTE</span>
                                 </a>
-                                <a href="contact.php" class="btn-main btn-line fx-slide">
-                                    <span>CONTACT US</span>
+                                <a href="https://wa.me/1800987654?text=Hi%20AK%20Energies%2C%20I%20would%20like%20to%20know%20more%20about%20your%20solar%20services" target="_blank" rel="noopener noreferrer" class="btn-main btn-line fx-slide hover-white">
+                                    <span><i class="fa-brands fa-whatsapp me-1 text-success"></i> CHAT ON WHATSAPP</span>
                                 </a>
                             </div>
                         </div>

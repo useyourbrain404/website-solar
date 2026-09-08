@@ -41,10 +41,8 @@ $(document).ready(function() {
         }
         
         if (error == false) {
-            $('#send_message').attr({
-                'disabled': 'true',
-                'value': 'Sending...'
-            });
+            $('#send_message').prop('disabled', true).val('Sending...');
+            $('#send_message span').text('Sending Inquiry...');
             
             $.post("contact.php", $("#contact_form").serialize(), function(result) {
                 if (result == 'sent' || result.indexOf('success') !== -1 || result.indexOf('ok') !== -1 || result.indexOf('sent') !== -1) {
@@ -59,17 +57,14 @@ $(document).ready(function() {
                     }, 2000);
                 } else {
                     $('#error_message').fadeIn(500);
-                    $('#send_message').removeAttr('disabled').attr('value', 'Send Message');
+                    $('#send_message').prop('disabled', false).val('Send Message');
+                    $('#send_message span').text('Send Message & Request Quote');
                 }
             }).fail(function() {
-                $('#contact_form')[0].reset();
-                $('#submit').hide();
-                $('#error_message').hide();
-                $('#success_message').fadeIn(400);
-
-                setTimeout(function() {
-                    window.location.href = "contact.php?sent=1";
-                }, 2000);
+                $('#success_message').hide();
+                $('#error_message').fadeIn(500);
+                $('#send_message').prop('disabled', false).val('Send Message');
+                $('#send_message span').text('Send Message & Request Quote');
             });
         }
     });

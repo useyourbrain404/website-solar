@@ -20,6 +20,12 @@ if (!isset($page_description)) {
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="<?php echo htmlspecialchars($page_description); ?>" name="description">
     <meta content="solar energy, renewable energy, solar panels, solar installation, clean energy" name="keywords">
+    <!-- OpenGraph SEO Meta Tags -->
+    <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($page_description); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo-white.webp">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,12 +46,13 @@ if (!isset($page_description)) {
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
     <link href="css/custom-swiper-1.css" rel="stylesheet" type="text/css">
+    <link href="css/usability.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
     <div id="wrapper">
-        <a href="#" id="back-to-top"></a>
+        <a href="#" id="back-to-top" aria-label="Scroll back to top" role="button"></a>
 
         <!-- preloader begin -->
         <div id="de-loader"></div>
